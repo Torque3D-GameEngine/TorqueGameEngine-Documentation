@@ -1,0 +1,1514 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+  
+<!-- Mirrored from docs.garagegames.com/tge/official/content/documentation/Engine/Linux.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:22:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../index.html";</SCRIPT><link href="../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 15;
+   parent.leftFrame.expandToItem('tree2', 'doc15');
+   var element = parent.leftFrame.document.getElementById('doc15');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+	<link rel="stylesheet" type="text/css"  href="images/gemdoc.css" title="gemdoc_auto_stylesheet">
+
+    <title>Setting up the Torque SDK on Linux</title>
+    <meta name="GENERATOR" content=
+    "Modular DocBook HTML Stylesheet Version 1.7">
+    <link rel="HOME" title="Setting Up the Torque Game Engine"
+    href="index.html">
+    <link rel="PREVIOUS" title=
+    "Setting up the Torque SDK on Mac OSX" href=
+    "setupengine.mac.html">
+    <link rel="NEXT" title="Using the Torque Demo Application"
+    href="setupengine.demoapp.html">
+  
+
+<meta name="Generator" content="GemDoc"/>
+
+</head>
+
+  <BODY id = "BODYID" onLoad = "initComponent()"  class="section" bgcolor="#FFFFFF" text="#000000" link=
+  "#0000FF" vlink="#840084" alink="#0000FF">
+
+    <div class="section">
+      <h8 class="titleText"><a name="setupengine.linux"></a><a name = ""></a>Setting       up the Torque SDK on Linux</h1>
+
+      <div class="section">
+        <h2 class="section"><a name=
+        "setupengine.linux.preparesystem"></a><a name = "HeaderLink1"></a>Preparing Your         System</h2>
+
+        <p>You don't have to do much to get your system ready to
+        work with Torque. On Linux, simply ensure you meet the
+        system requirements listed below:</p>
+
+        <div class="section">
+          <h3 class="section"><a name=
+          "setupengine.linux.preparesystem.requirements"></a><a name = "HeaderLink2"></a>Linux           and OpenBSD</h3>
+
+          <p>Required Hardware:</p>
+
+          <ul>
+            <li>
+              <p>Pentium I, II, III, IV, AMD Athlon, etc.</p>
+            </li>
+
+            <li>
+              <p>64MB RAM or more, highly dependent on your
+              application</p>
+            </li>
+
+            <li>
+              <p>A relatively recent NVIDIA 3D card. Other cards
+              may work but are untested.</p>
+            </li>
+          </ul>
+          <br>
+          <br>
+           
+
+          <p>Required Software:</p>
+
+          <ul>
+            <li>
+              <p>XFree86 4.0 or greater with a appropriate 3D
+              drivers (GLX/DRI) for your video card.</p>
+            </li>
+
+            <li>
+              <p><a href="http://www.libsdl.org/" target=
+              "_top">SDL</a> SDK version 1.2 or later. (1.2.3 or
+              later is recommended)</p>
+            </li>
+
+            <li>
+              <p><a href="http://www.openal.org/" target=
+              "_top">OpenAL</a> Runtime or SDK Installation. (See
+              the <a href=
+              "setupengine.linux.html#setupengine.linux.compile.install_build.system_setup">
+              compiler setup</a> document for more information on
+              installing OpenAL)</p>
+            </li>
+
+            <li>
+              <p><a href="http://www.mesa3d.org/" target=
+              "_top">Mesa3D</a> version 3.4 or later. (3.4.2 or
+              later recommended)</p>
+            </li>
+          </ul>
+          <br>
+          <br>
+           
+
+          <p>Development Tools:</p>
+
+          <ul>
+            <li>
+              <p>GNU make and g++ (version 2 or 3).</p>
+            </li>
+
+            <li>
+              <p><a href="http://www.web-sites.co.uk/nasm" target=
+              "_top">NASM</a> Assembler version 0.98 or later.</p>
+            </li>
+          </ul>
+          <br>
+          <br>
+        </div>
+
+        <div class="section">
+          <h3 class="section"><a name=
+          "setupengine.linux.preparesystem.summary"></a><a name = "HeaderLink3"></a>          Summary</h3>
+
+          <p>There you have it, nothing too heavy-duty. Please
+          note, however, though the engine itself has fairly
+          minimal requirements as far as hardware, the performance
+          of any particular game built using the TGE will depend
+          greatly on how each game makes use of the resources
+          available to it. TGE games can vary from very low-demand
+          applications such as small 2D game "toys" to high end
+          (and high framerate) 3D Role Playing Games, First Person
+          Shooters, Racers, Flight Simulators, and whatever you can
+          dream up! Torque is a high-performance engine, it is up
+          to you how far your own code and content will stress a
+          user's systems.</p>
+
+          <p>Now that you've downloaded the SDK source-code, and
+          your system is ready to work, read on to learn how to
+          compile the SDK source-code on Linux.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section"><a name="setupengine.linux.compile"></a><span class="productname"></span><a name = "HeaderLink4"></a>        Compiling the Torque Game         Engine SDK on Linux and OpenBSD</h2>
+        <font color="RED">John Quigley<font color="RED"><font
+        color="RED">Linux</font><font color=
+        "RED">OpenBSD</font><font color="RED">Build</font><font
+        color="RED">Building</font><font color=
+        "RED">Compile</font><font color="RED">Compiling</font><font
+        color="RED">Make</font><font color=
+        "RED">KDevelop</font><font color=
+        "RED">XEmacs</font></font></font> 
+
+        <blockquote class="ABSTRACT">
+          <div class="abstract">
+            <a name="AEN509"></a> 
+
+            <p>This document describes the steps necessary to get
+            the Torque SDK and Demo application working on a unix
+            system. If you have problems, please read the Known
+            Issues section, below, before posting on the
+            forums.</p>
+          </div>
+        </blockquote>
+
+        <div class="section">
+          <h3 class="section"><a name=
+          "setupengine.linux.compile.install_build"></a><a name = "HeaderLink5"></a>          Installation and Build</h3>
+
+          <div class="section">
+            <h4 class="section"><a name=
+            "setupengine.linux.compile.install_build.system_setup"></a><a name = "HeaderLink6"></a>            Step 1: System Setup</h4>
+
+            <p>Before beginning, you should insure that all of the
+            hardware/software prerequisites described in the <a
+            href=
+            "setupengine.linux.html#setupengine.linux.preparesystem">
+            Torque on Linux system requirements section</a> are
+            properly set up. Note that dedicated server build only
+            requires NASM and a functional compiler.</p>
+
+            <p>Many unix distributions either install the third
+            party libraries by default or include them on the
+            installation CD. If you are using Mandrake, you may
+            wish to use the Software Manager to install the
+            packages
+            (MandrakeMenu-&gt;Configuration-&gt;Packaging-&gt;Software
+            Manager). You will also need the development files for
+            the packages, these are often in a package named
+            "devel", for example XFree86-devel.</p>
+
+            <p>A static version of Mesa's GLU library is required.
+            If your system does not have a libGLU.a file, you will
+            need to install Mesa from source to get it.</p>
+
+            <p><em>OpenAL and SDL</em></p>
+
+            <p>For SDL, its recommended that you install from
+            source if the version that comes with your distribution
+            is older than 1.2.4. For OpenAL, you can use the <a
+            href=
+            "http://www.garagegames.com/downloads/openal-linux-3-29-02.tar.gz"
+             target="_top">distribution</a> hosted here on
+            GarageGames. Torque is sensitive to the version of
+            OpenAL installed on your system. The wrong version may
+            produce no sound or cause Torque to crash. You can test
+            sound by mousing over one of the buttons in the
+            shell.</p>
+
+            <p>The usual procedure for compiling OpenAL and SDL
+            is:</p>
+
+            <table border="0">
+              <tbody>
+                <tr>
+                  <td>cd source_directory</td>
+                </tr>
+
+                <tr>
+                  <td>./configure (if you get a "not found" error,
+                  do "sh ./autogen.sh" first)</td>
+                </tr>
+
+                <tr>
+                  <td>make</td>
+                </tr>
+
+                <tr>
+                  <td>su</td>
+                </tr>
+
+                <tr>
+                  <td>make install</td>
+                </tr>
+
+                <tr>
+                  <td>ldconfig</td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+            <br>
+             
+
+            <p>If you are installing SDL or OpenAL from source,
+            note that by default they install themselves in
+            /usr/local/lib, a directory that is not searched in
+            some unix distributions (e.g: RedHat). If this is the
+            case on your system, the library will fail to load when
+            the Demo App starts. You'll need to either change the
+            install prefix (./configure --prefix=/usr), or add
+            /usr/local/lib to /etc/ld.so.conf (and run ldconfig as
+            root after making the change).</p>
+          </div>
+
+          <div class="section">
+            <h4 class="section"><a name=
+            "setupengine.linux.compile.install_build.compiler_setup"></a><a name = "HeaderLink7"></a>            Step 2: Compiler Setup and Building</h4>
+
+            <p>It is recommended that you use GCC3 to build the
+            source. To configure the build, do the following:</p>
+
+            <table border="0">
+              <tbody>
+                <tr>
+                  <td>cd ~/projects/torque</td>
+                </tr>
+
+                <tr>
+                  <td>make -f mk/configure.mk OS=LINUX
+                  COMPILER=GCC3 BUILD=DEBUG</td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+            <br>
+             
+
+            <p>This command configures Torque for a Linux GCC3
+            Debug build. To see a list of other valid
+            configurations, omit the OS, COMPILER, and BUILD
+            options from the command. "Make" will tell you if the
+            configuration is valid after you run the command. If it
+            is, run the following command to build the demo
+            application:</p>
+
+            <table border="0">
+              <tbody>
+                <tr>
+                  <td>cd ~/projects/torque</td>
+                </tr>
+
+                <tr>
+                  <td>make</td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+            <br>
+             
+
+            <p>If all goes well, the torqueDemo_DEBUG.exe will be
+            built and dropped into the "example" directory. You can
+            optionally build the dedicated server and tools as
+            described below, however these are not required.</p>
+
+            <p>If all does not go well, re-check your configuration
+            and also consult the Known Issues section, below.</p>
+
+            <p><em>Dedicated Server Build</em></p>
+
+            <p>You may want to do a dedicated server only build.
+            This build does not include any of the client code and
+            therefore has fewer dependencies. The dedicated server
+            is not required, however, since the client can also be
+            run with the -dedicated command. To build the dedicated
+            server:</p>
+
+            <table border="0">
+              <tbody>
+                <tr>
+                  <td>make clean</td>
+                </tr>
+
+                <tr>
+                  <td>make dedicated</td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+            <br>
+             
+
+            <p>The "make clean" step is important. You must also
+            "make clean" if you want to rebuild the client after
+            building the dedicated server.</p>
+
+            <p>The name of the dedicated server executable is
+            torqueDemod.</p>
+
+            <p><em>Tools</em></p>
+
+            <p>To build the tools, cd into the "tools" directory
+            and do "make". buildWad, map2dif and texture2bm8 will
+            be built. At the time of this writing, the tools have
+            not been tested, so report problems to <a href=
+            "mailto:jmquigs@bigfoot.com" target="_top">
+            jmquigs@bigfoot.com</a> .</p>
+          </div>
+
+          <div class="section">
+            <h4 class="section"><a name=
+            "setupengine.linux.compile.install_build.run_demo"></a><a name = "HeaderLink8"></a>            Step 4: Run the Demo Application</h4>
+
+            <p>To run the Demo Application, cd into the example
+            directory and issue this command to start it:</p>
+
+            <table border="0">
+              <tbody>
+                <tr>
+                  <td>cd ~/projects/torque/example</td>
+                </tr>
+
+                <tr>
+                  <td>./torqueDemo_DEBUG.exe</td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+            <br>
+             
+
+            <p>The demo application client should start.</p>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section"><a name=
+          "setupengine.linux.compile.known_issues"></a><a name = "HeaderLink9"></a>Known           Issues</h3>
+
+          <div class="section">
+            <h4 class="section"><a name=
+            "setupengine.linux.compile.known_issues.general"></a><a name = "HeaderLink10"></a>            General</h4>
+
+            <ul>
+              <li>
+                <p>The compilation currently generates a number of
+                warnings. The majority of these are benign
+                float/int conversions. These warnings are "normal"
+                and will eventually be removed.</p>
+              </li>
+
+              <li>
+                <p>The demo application must be started in the
+                example directory. (If for some reason you need to
+                start it elsewhere, use the -chdir parameter so
+                that the application can cd to the example
+                dir).</p>
+              </li>
+
+              <li>
+                <p>Torque has problems linking with GLU on some
+                S.U.S.E. distributions. Reinstalling mesa may
+                help.</p>
+              </li>
+
+              <li>
+                <p>On Unix, Torque stores created files (e.g.:
+                .dso) in "~/.garagegames/exename". This directory
+                is also searched first for files that need to be
+                read. This behavior can be disabled by removing the
+                -DUSE_FILE_REDIRECT parameter in conf.UNIX.mk. It
+                can also be disabled at runtime with the
+                "-nohomedir" command line parameter.</p>
+              </li>
+            </ul>
+            <br>
+            <br>
+          </div>
+
+          <div class="section">
+            <h4 class="section"><a name=
+            "setupengine.linux.compile.known_issues.dedicated_server"></a><a name = "HeaderLink11"></a>            Dedicated Server</h4>
+
+            <ul>
+              <li>
+                <p>The client can be run as a dedicated server, or
+                you can use the dedicated server only build (see
+                above).</p>
+              </li>
+
+              <li>
+                <p>You can start the dedicated server with no
+                mission loaded with this command:</p>
+
+                <table border="0">
+                  <tbody>
+                    <tr>
+                      <td>cd [example directory]</td>
+                    </tr>
+
+                    <tr>
+                      <td>./torqueDemod_DEBUG.exe -dedicated</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <br>
+              </li>
+
+              <li>
+                <p>Or you can specify a mission on the command line
+                with the -mission flag, for example:</p>
+
+                <table border="0">
+                  <tbody>
+                    <tr>
+                      <td>cd [example directory]</td>
+                    </tr>
+
+                    <tr>
+                      <td>./torqueDemod_DEBUG.exe -dedicated
+                      -mission
+                      fps/data/missions/waterWorld.mis</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <br>
+              </li>
+
+              <li>
+                <p>You can exit the dedicated server by typing
+                quit();</p>
+              </li>
+            </ul>
+            <br>
+            <br>
+          </div>
+
+          <div class="section">
+            <h4 class="section"><a name=
+            "setupengine.linux.compile.known_issues.client"></a><a name = "HeaderLink12"></a>            Client</h4>
+
+            <ul>
+              <li>
+                <p>The -console option can be useful for
+                troubleshooting startup problems.</p>
+              </li>
+
+              <li>
+                <p>There is distortion with some sound effects.
+                This is being investigated.</p>
+              </li>
+
+              <li>
+                <p>There is a performance problem when zooming.
+                This is being investigated.</p>
+              </li>
+
+              <li>
+                <p>Some systems have problems with CD audio
+                initialization (crash or hang during startup). If
+                your system is affected use the -nocdaudio command
+                line parameter.</p>
+              </li>
+
+              <li>
+                <p>Clipboard notes: the client does not support
+                copy/paste with the X primary selection buffer
+                (i.e.: highlight plus middle mouse button). You
+                must use explicit cut/copy/paste commands in each
+                application. For Torque these are CTRL-C (Copy),
+                CTRL-V (Paste), and CTRL-X (Cut). Also note that
+                due to a bug in QT, pasting is not supported from
+                KDE/QT apps (this is fixed in QT3)</p>
+              </li>
+
+              <li>
+                <p>If you have an AMD system with an AGP graphics
+                card, you may experience lockups in 3D
+                applications. The following fix is from the <a
+                href="http://www.gentoo.org/" target="_top">Gentoo
+                linux</a> site:</p>
+
+                <table border="0">
+                  <tbody>
+                    <tr>
+                      <td>If you have been experiencing lockups on
+                      your Athlon, Duron or Athlon MP system when
+                      using AGP video, try passing the
+                      mem=nopentium option to your kernel (using
+                      GRUB or LILO) at boot-time. This tells Linux
+                      to go back to using 4K pages, avoiding this
+                      CPU bug.</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <br>
+              </li>
+            </ul>
+            <br>
+            <br>
+          </div>
+
+          <div class="section">
+            <h4 class="section"><a name=
+            "setupengine.linux.compile.known_issues.bsd"></a><a name = "HeaderLink13"></a>            BSD</h4>
+
+            <ul>
+              <li>
+                <p>The BSD port is not currently maintained. It may
+                be maintained in the future. If you have interest
+                in the BSD port, send an email to <a href=
+                "mailto:jmquigs@bigfoot.com" target="_top">
+                jmquigs@bigfoot.com</a> .</p>
+              </li>
+            </ul>
+            <br>
+            <br>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section"><a name=
+          "setupengine.linux.compile.getting_help"></a><a name = "HeaderLink14"></a>Getting           Help</h3>
+
+          <p>If you have problems building or working with Torque,
+          the first thing you should do is go over your
+          configuration and re-check the documentation. If you
+          can't fix the problem, you can try asking for help in the
+          <a href=
+          "http://www.garagegames.com/index.php?sec=mg&amp;mod=forums&amp;page=ircChat"
+           target="_top">Garage Games IRC Room</a> , or on the
+          Forums. For forum posts, please post your message to the
+          private SDK "Getting Started" forum. Include the word
+          "linux" somewhere in the subject line to make your
+          message easily locatable with a search.</p>
+        </div>
+
+        <div class="section">
+          <h3 class="section"><a name=
+          "setupengine.linux.compile.devenv"></a><a name = "HeaderLink15"></a>Development           Environments for Torque</h3>
+
+          <p>This section covers some of the development
+          environments that can be used to work with Torque. Though
+          a complete tutorial for these tools is beyond the scope
+          of this document, this section offers a few tips for
+          setting up and using these tools.</p>
+
+          <div class="section">
+            <h4 class="section"><a name=
+            "setupengine.linux.compile.devenv.kdevelop"></a><a name = "HeaderLink16"></a>            KDevelop</h4>
+
+            <p>KDevelop 3 works pretty much straight out of the box
+            with Torque.</p>
+
+            <ul>
+              <li>
+                <p>Install Kdevelop if you do not already have it
+                installed. On mandrake systems, this can be done
+                through the software manager. <em>NOTE:</em> If you
+                are using gnome and do not have KDE installed at
+                all, you will not be able to use the embedded
+                console in KDevelop. While not necessary, this
+                console is useful.</p>
+              </li>
+
+              <li>
+                <p>Next, run Kdevelop setup if you have not
+                already, and make intelligent choices... most
+                options can be accepted with default values.</p>
+              </li>
+
+              <li>
+                <p>After Kdevelop starts up, go to
+                Options-&gt;KDevelop Setup. You may want to change
+                the path to the default project directory.</p>
+              </li>
+
+              <li>
+                <p>Now, go to Project-&gt;Generate Project File.
+                Navigate to the torque dir and press ok. You may
+                receive a message saying "No Makefile.am found, are
+                you sure you want to do this?" If so, choose yes.
+                Next, you'll see some activity in the messages
+                window. When finished, your project may not be
+                opened; in this case, go to Project-&gt;Open and
+                navigate to the directory you generated the project
+                file in. Choose the newly generated file -
+                *.kdevprj; it will probably take a few minutes to
+                load due to the number of files in the project.</p>
+              </li>
+
+              <li>
+                <p>Go to Project-&gt;Options. On the General tab,
+                uncheck "Modify Makefiles". Next, go to the "Make
+                Options" tab and check "Run make in" and make sure
+                it is set to <strong>./</strong> Then go to the
+                "Binary" tab and set the path and filename to <em>
+                example/torqueDemo_DEBUG.exe</em> Click ok. You may
+                receive a message stating that new makefiles will
+                be generated. These would clutter up your torque
+                directory, but don't worry because the make will
+                fail. Next, the dir will be refreshed. This may
+                take a few minutes.</p>
+              </li>
+            </ul>
+            <br>
+            <br>
+             
+
+            <p>You might want to do a Save-all just in case
+            something goes wrong for some unforeseen reason.</p>
+
+            <p>Now it is time to compile your project. Simply go to
+            Build-&gt;Make. Pay attention to the Messages window to
+            see if you get any errors. To execute the demo after it
+            has successfully compiled you will need to do
+            Build-&gt;Execute with Arguments and put <em>-chdir
+            example</em> in the popup. To debug the demo you need
+            to do Debug-&gt;Start (other)...-&gt;Debug with
+            Arguments and enter <em>-chdir example</em> in the
+            popup. <em>NOTE:</em> Before debugging, you must set
+            breakpoints and you cannot set them during debugging
+            like in VC++. If the project compiles, but hangs and
+            nothing pops up, see in the <a href=
+            "setupengine.linux.html#setupengine.linux.compile.known_issues">
+            Known Issues section</a> above for information on the
+            -console option.</p>
+          </div>
+
+          <div class="section">
+            <h4 class="section"><a name=
+            "setupengine.linux.compile.devenv.xemacs"></a><a name = "HeaderLink17"></a>            XEmacs</h4>
+
+            <p>While not the most "visual" environment around,
+            XEmacs is a fairly capable Torque editing environment.
+            Here are some tips for using XEmacs with Torque.</p>
+
+            <ul>
+              <li>
+                <p>The "grep-find" command (M-x grep-find) is
+                useful for searching through files for a regular
+                expression. By default it will search all
+                directories in the current buffer's directory. Do
+                M-x pwd to figure out what directory you are in. Do
+                M-x man, "grep" for more information about
+                grep.</p>
+              </li>
+
+              <li>
+                <p>The emacs "compile" and "recompile" commands
+                (M-x compile and M-x recompile) can be used to
+                build torque from the ide. The difference between
+                the two is that compile will ask you for a command
+                line to run and recompile just runs the last
+                compile command.</p>
+              </li>
+
+              <li>
+                <p>You can do a visual diff between two files with
+                the M-x ediff-files command. The M-x
+                ediff-directories command is similar, except that
+                you can diff a set of files in a directory in
+                succession. ediff-directories can also generate
+                "patch"-compatible patch files.</p>
+              </li>
+
+              <li>
+                <p>You can debug from within xemacs, or you can
+                debug using one of the tools described below.</p>
+              </li>
+            </ul>
+            <br>
+            <br>
+          </div>
+
+          <div class="section">
+            <h4 class="section"><a name=
+            "setupengine.linux.compile.devenv.debug_tools"></a><a name = "HeaderLink18"></a>            Debugging Tools</h4>
+
+            <ul>
+              <li>
+                <p>The "gdb" command can be used to analyze core
+                dumps to get a backtrace. Run "gdb -c core
+                torqueDemo_DEBUG.exe", then type "where". Some
+                systems do not dump core by default; you can enable
+                core dumps with the command "ulimit -c
+                500000000"</p>
+              </li>
+
+              <li>
+                <p>You can use gdb for interactive debugging,
+                although its interface is tough for new users. Some
+                decent visual debuggers include "ddd" and "gvd",
+                both of these work with Torque.</p>
+              </li>
+
+              <li>
+                <p>If torque hangs for some reason, you can send it
+                a SIGSEGV. This will cause it to crash, and from
+                there you can use the gdb command above to analyze
+                the core dump. Do to this, use the "ps" command to
+                get the pid of torque (ps -aux | grep "torque"),
+                then kill torque by sending SIGSEGV to the lowest
+                pid reported by ps (e.g.: kill -11 8686).</p>
+              </li>
+            </ul>
+            <br>
+            <br>
+          </div>
+
+          <div class="section">
+            <h4 class="section"><a name=
+            "setupengine.linux.compile.dev_env.install_winsdk"></a><a name = "HeaderLink19"></a>            Installing with the windows SDK</h4>
+
+            <p><em>NOTE:</em> The number one problem people have
+            when installing from a windows directory is that the
+            case of lib/openal/LINUX gets lowercased. If you get
+            openal compiler errors, make sure this directory is
+            "LINUX" and not "linux".</p>
+
+            <p>You can install the SDK code from the windows SDK.
+            However, this method of installation requires that you
+            have a Windows installation available, whose files are
+            accessible to your unix partition.</p>
+
+            <p>Boot into Windows and install the SDK on to a
+            filesystem that is accessible to your unix
+            installation. Reboot into unix and copy the files from
+            the windows filesystem to your unix file system.</p>
+
+            <p>The C++ header and script source files distributed
+            with the Windows SDK need to be converted from
+            Windows/DOS CR/LF line endings into using only LF. The
+            shell script <em>unixchange.sh</em> located in the <em>
+            torque/tools/unix</em> directory is provided for this
+            purpose. The script should be executed once from the
+            torque/tools/unix directory before running the
+            makefile.</p>
+
+            <p>unixchange.sh may also need to be converted before
+            it is run. You can use the "dos2unix" utility to
+            convert the file before running it. This utility is
+            part of the unix2dos package and comes with RedHat
+            Linux and probably many other distributions, though it
+            may not be installed by default.</p>
+          </div>
+
+          <div class="section">
+            <h4 class="section"><a name=
+            "setupengine.linux.compile.dev_env.mandrake_nvidia"></a><a name = "HeaderLink20"></a>            Mandrake NVIDIA Driver Setup</h4>
+
+            <p>This section will help you get new drivers installed
+            for your video card since torque is a 3d game and will
+            need them. Currently there are only Nvidia Drivers
+            installation instructions. <em>NOTE:</em> You need to
+            have XFree86 4.0 or higher installed.</p>
+
+            <div class="section">
+              <h5 class="section"><a name=
+              "setupengine.linux.compile.dev_env.mandrake_nvidia.nvidia_drivers"></a><a name = "HeaderLink21"></a>              nVidia Drivers</h5>
+
+              <p>The Nvidia website has instructions for installing
+              their drivers and they are very helpful, but in case
+              of difficulty with a Mandrake install, the required
+              steps are listed below. The NVidia Linux drivers
+              website is located <a href=
+              "http://www.nvidia.com/view.asp?PAGE=linux" target=
+              "_top">here</a> . You will need to download <a href=
+              "http://205.158.109.140/XFree86_40/1.0-2313/NVIDIA_GLX-1.0-2313.i386.rpm"
+               target="_top">NVIDIA_GLX-1.0-2313.i386.rpm</a> and
+              <a href=
+              "http://205.158.109.140/XFree86_40/1.0-2313/NVIDIA_kernel-1.0-2313.mdk81up.i686.rpm"
+               target="_top">
+              NVIDIA_kernel-1.0-2313.mdk81up.i686.rpm</a> . If you
+              are unsure what you need, Nvidia has a program that
+              can tell you. It can be accessed <a href=
+              "http://205.158.109.140/XFree86_40/1.0-2313/NVchooser.sh"
+               target="_top">here</a> .</p>
+
+              <p>To set-up:</p>
+
+              <ul>
+                <li>
+                  <p>First you need to disable Xwindows login on
+                  boot, if it is enabled. If your install does not
+                  boot straight into Xwindows then you can skip
+                  this step. Switch to root by typing su and then
+                  as root edit your /etc/inittab file. You should
+                  see a line that looks like this <em>
+                  id:5:initdefault:</em> change the 5 to a 3 and
+                  then save the file.</p>
+                </li>
+
+                <li>
+                  <p>Now that we no longer start into xwindows its
+                  time to exit out of Xwindows to a normal prompt.
+                  (you may have to restart or I guess you could
+                  press ctrl-alt-backspace to kill Xwindows)</p>
+                </li>
+
+                <li>
+                  <p>Change to the dir that you downloaded the
+                  drivers to. If you are not su (i.e. root) then
+                  make it so now. Type <em>-ivh
+                  NVIDIA_kernel-1.0-2313.mdk81up.i686.rpm</em> and
+                  check to make sure this is the same filename as
+                  the one you downloaded. If not, use your
+                  filename. The install process should begin and
+                  will finally say "Nvidia Drivers installed
+                  successfully" (or give a similar success
+                  message). Next, issue the command <em>rpm -ivh
+                  NVIDIA_GLX-1.0-2313.i386.rpm</em> . This command
+                  might generate some warnings, but don't worry
+                  about them.</p>
+                </li>
+
+                <li>
+                  <p>Next, edit /etc/X11/XF86Config-4. Scroll down
+                  until you see <em>Load "dbe"</em> and add on the
+                  next line <em>Load "glx"</em> then continue on
+                  down the file till you get to <em>Section
+                  "Device"</em> where it is talking about your
+                  graphics card...mine has <em>Identifier "NVIDIA
+                  GeForce2 DDR (generic)"</em> but that will depend
+                  on which graphics card you have. (mine is a
+                  Geforce 2 MX) you should see in that section <em>
+                  Driver "nv"</em> you need to change the "nv" to
+                  "nvidia". Now save and exit the file.</p>
+                </li>
+
+                <li>
+                  <p>Now restart Xwindows with startx you should
+                  see a short nvidia splash screen now when X
+                  starts up. If you have any problems or you are
+                  not using mandrake 8.1 then consult the <a href=
+                  "http://205.158.109.140/XFree86_40/1.0-2313/README.txt"
+                   target="_top">Nvidia documentation</a> for
+                  further help.</p>
+                </li>
+              </ul>
+              <br>
+              <br>
+            </div>
+          </div>
+
+          <div class="section">
+            <h4 class="section"><a name=
+            "setupengine.linux.compile.credits"></a><a name = "HeaderLink22"></a>Credits</h4>
+
+            <p>This document was written by John Quigley.</p>
+
+            <p>The Mandrake Software manager information, KDevelop
+            guide, NVIDIA driver guide, and OpenAL compilation
+            commands were contributed by Tim Newell.</p>
+          </div>
+
+          <div class="section">
+            <h4 class="section"><a name=
+            "setupengine.linux.compile.build_exe"></a><a name = "HeaderLink23"></a>Building a             Linux Release Package</h4>
+            <font color="RED">John Quigley<font color="RED"><font
+            color="RED">Linux</font><font color=
+            "RED">OpenBSD</font><font color="RED">Build</font><font
+            color="RED">Building</font><font color=
+            "RED">Compile</font><font color=
+            "RED">Compiling</font><font color=
+            "RED">Make</font><font color=
+            "RED">Release</font></font></font> 
+
+            <blockquote class="ABSTRACT">
+              <div class="abstract">
+                <a name="AEN736"></a> 
+
+                <p>This document describes the steps for building a
+                Linux binary Release package for your game. It is a
+                bit of a balancing act to create a binary package
+                that will run on many hardware/software
+                configurations and also not conflict with various
+                open source licenses (especially GNU). With this
+                document, you should be able to accomplish the task
+                successfully.</p>
+              </div>
+            </blockquote>
+
+            <div class="section">
+              <h5 class="section"><a name=
+              "setupengine.linux.compile.build_exe.install"></a><a name = "HeaderLink24"></a>              Installation and Build</h5>
+
+              <p>This section contains the step-by-step
+              instructions for building the binary package. The
+              executable built by this process has the following
+              requirements:</p>
+
+              <ul>
+                <li>
+                  <p>Pentium-compatible with MMX</p>
+                </li>
+
+                <li>
+                  <p>GNU Libc 2.2 (+)</p>
+                </li>
+              </ul>
+              <br>
+              <br>
+               
+
+              <div class="section">
+                <h6 class="section"><a name=
+                "setupengine.linux.compile.build_exe.configure_thirdparty"></a><a name = "HeaderLink25"></a>                Configuring Third Party Libraries</h6>
+
+                <p>The SDL and OpenAL libraries should be specially
+                configured for a distributable binary package. The
+                goals here are to create optimized libraries for
+                best performance and compatibility and to eliminate
+                dependencies on other libraries that Torque doesn't
+                need. You will need the SDL and OpenAL source
+                distributions to perform this step.</p>
+
+                <p>First build the OpenAL library. Do the following
+                in the openal source directory:</p>
+
+                <table border="0">
+                  <tbody>
+                    <tr>
+                      <td>cd path/to/openal/linux</td>
+                    </tr>
+
+                    <tr>
+                      <td>sh autogen.sh</td>
+                    </tr>
+
+                    <tr>
+                      <td>./configure --target=i586-pc-linux-gnu
+                      --enable-optimization</td>
+                    </tr>
+
+                    <tr>
+                      <td>make</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <br>
+                 
+
+                <p>After building the library, do a check to make
+                sure no extraneous content was linked in. Run the
+                "ldd" command on the library to check this:</p>
+
+                <table border="0">
+                  <tbody>
+                    <tr>
+                      <td>ldd linux/src/libopenal.so.0.0.6</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <br>
+                 
+
+                <p>The output should look similar to the following.
+                If there are extra libs you should investigate why
+                they are being linked in. If they don't exist on
+                the end user's system, the openal library will fail
+                to load.</p>
+
+                <table border="0">
+                  <tbody>
+                    <tr>
+                      <td>libm.so.6 =&gt; /lib/i686/libm.so.6
+                      (0x400ab000)</td>
+                    </tr>
+
+                    <tr>
+                      <td>libdl.so.2 =&gt; /lib/libdl.so.2
+                      (0x400ce000)</td>
+                    </tr>
+
+                    <tr>
+                      <td>libpthread.so.0 =&gt;
+                      /lib/i686/libpthread.so.0 (0x400d1000)</td>
+                    </tr>
+
+                    <tr>
+                      <td>libc.so.6 =&gt; /lib/i686/libc.so.6
+                      (0x42000000)</td>
+                    </tr>
+
+                    <tr>
+                      <td>/lib/ld-linux.so.2 =&gt;
+                      /lib/ld-linux.so.2 (0x80000000)</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <br>
+                 
+
+                <p>Next, build and install the optimized SDL
+                library:</p>
+
+                <table border="0">
+                  <tbody>
+                    <tr>
+                      <td>cd path/to/SDL-1.2.4</td>
+                    </tr>
+
+                    <tr>
+                      <td>./configure --target=i586-pc-linux-gnu
+                      --enable-debug=no --enable-audio=no</td>
+                    </tr>
+
+                    <tr>
+                      <td>make</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <br>
+                 
+
+                <p>Next do a check for extraneous libs:</p>
+
+                <table border="0">
+                  <tbody>
+                    <tr>
+                      <td>ldd src/.libs/libSDL.so</td>
+                    </tr>
+
+                    <tr>
+                      <td>libm.so.6 =&gt; /lib/i686/libm.so.6
+                      (0x40080000)</td>
+                    </tr>
+
+                    <tr>
+                      <td>libX11.so.6 =&gt;
+                      /usr/X11R6/lib/libX11.so.6 (0x400a3000)</td>
+                    </tr>
+
+                    <tr>
+                      <td>libXext.so.6 =&gt;
+                      /usr/X11R6/lib/libXext.so.6 (0x40178000)</td>
+                    </tr>
+
+                    <tr>
+                      <td>libdl.so.2 =&gt; /lib/libdl.so.2
+                      (0x40185000)</td>
+                    </tr>
+
+                    <tr>
+                      <td>libc.so.6 =&gt; /lib/i686/libc.so.6
+                      (0x42000000)</td>
+                    </tr>
+
+                    <tr>
+                      <td>/lib/ld-linux.so.2 =&gt;
+                      /lib/ld-linux.so.2 (0x80000000)</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <br>
+                 
+
+                <p>If there are other libraries that you did not
+                explicitly include, check your configuration. If
+                everything is OK, then install the library:</p>
+
+                <table border="0">
+                  <tbody>
+                    <tr>
+                      <td>make install (as root)</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <br>
+              </div>
+
+              <div class="section">
+                <h6 class="section"><a name=
+                "setupengine.linux.compile.build_exe.build"></a><a name = "HeaderLink26"></a>                Build the Executable</h6>
+
+                <p>Next you need to build a Release version of your
+                Torque game. Before you begin, consider changing
+                the <a href=
+                "setupengine.linux.html#setupengine.linux.compile.build_exe.configure_thirdparty">
+                -DUSE_FILE_REDIRECT</a> parameter in the makefile.
+                To build the executable, do this:</p>
+
+                <table border="0">
+                  <tbody>
+                    <tr>
+                      <td>make -f mk/configure.mk OS=LINUX
+                      COMPILER=GCC3 BUILD=RELEASE</td>
+                    </tr>
+
+                    <tr>
+                      <td>make clean</td>
+                    </tr>
+
+                    <tr>
+                      <td>make</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <br>
+                 
+
+                <p>After you've built the executable, do a final
+                check to make sure that you don't have wacky libs
+                getting included:</p>
+
+                <table border="0">
+                  <tbody>
+                    <tr>
+                      <td>ldd torqueDemo.exe</td>
+                    </tr>
+
+                    <tr>
+                      <td>libSDL-1.2.so.0 =&gt;
+                      /usr/local/lib/libSDL-1.2.so.0
+                      (0x4002b000)</td>
+                    </tr>
+
+                    <tr>
+                      <td>libpthread.so.0 =&gt;
+                      /lib/i686/libpthread.so.0 (0x40095000)</td>
+                    </tr>
+
+                    <tr>
+                      <td>libdl.so.2 =&gt; /lib/libdl.so.2
+                      (0x400a9000)</td>
+                    </tr>
+
+                    <tr>
+                      <td>libstdc++-libc6.2-2.so.3 =&gt;
+                      /usr/lib/libstdc++-libc6.2-2.so.3
+                      (0x400ac000)</td>
+                    </tr>
+
+                    <tr>
+                      <td>libm.so.6 =&gt; /lib/i686/libm.so.6
+                      (0x400ef000)</td>
+                    </tr>
+
+                    <tr>
+                      <td>libc.so.6 =&gt; /lib/i686/libc.so.6
+                      (0x42000000)</td>
+                    </tr>
+
+                    <tr>
+                      <td>libX11.so.6 =&gt;
+                      /usr/X11R6/lib/libX11.so.6 (0x40111000)</td>
+                    </tr>
+
+                    <tr>
+                      <td>libXext.so.6 =&gt;
+                      /usr/X11R6/lib/libXext.so.6 (0x401e7000)</td>
+                    </tr>
+
+                    <tr>
+                      <td>/lib/ld-linux.so.2 =&gt;
+                      /lib/ld-linux.so.2 (0x40000000)</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <br>
+                 
+
+                <p>As before, you probably don't want any libs
+                other than the above. Next, re-name the executable
+                using something like:</p>
+
+                <table border="0">
+                  <tbody>
+                    <tr>
+                      <td>mv torqueDemo.exe mygame.dynamic</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <br>
+                 
+
+                <p>You should also check the example directory to
+                make sure that it doesn't contain any debug builds,
+                core dumps, or other extraneous files.</p>
+              </div>
+
+              <div class="section">
+                <h6 class="section"><a name=
+                "setupengine.linux.compile.build_exe.tplib_directory"></a><a name = "HeaderLink27"></a>                Make the tplib Directory</h6>
+
+                <p>By now you've guessed that your game executable
+                will be dynamically linked. The glibc 3 libraries
+                (pthread, dl, m, c, ld-linux) and the OpenGL
+                library (libGL.so) will be required on the end
+                user's system. The other libraries will be
+                distributed with the binary package. This maximizes
+                the chance that the end user will be able to run
+                the game "out of the box".</p>
+
+                <p>The bundled libraries will be installed in a
+                directory called "tplib" (for Third Party
+                Libraries) under the game root folder, for example:
+                "example/tplib". The SDK includes a tool that will
+                populate the tplib directory. This tool is called
+                <em>mktplib.sh</em> .</p>
+
+                <p>Legalese alert! Before you run mktplib, you
+                should update
+                "tools/unix/tplib_template/ReadMe.ThirdParty.html".
+                This file is supposed to contain the version
+                numbers of the LGPL/GPL components that are in use.
+                These values are set to XXXXX by default in the
+                template file, and you should update them before
+                you run mktplib.sh.</p>
+
+                <p>Run mktplib.sh like this:</p>
+
+                <table border="0">
+                  <tbody>
+                    <tr>
+                      <td>cd path/to/torque/tools/unix</td>
+                    </tr>
+
+                    <tr>
+                      <td>./mktplib.sh path/to/openal
+                      path/to/game_executable</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <br>
+                 
+
+                <p>For example:</p>
+
+                <table border="0">
+                  <tbody>
+                    <tr>
+                      <td>./mktplib.sh
+                      ~/dist/libs/openal/openal-cvs/snapshot-unpack/openal
+                      ~/projects/torque/current/torque/example/mygame.dynamic</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <br>
+                 
+
+                <p>After running this you should have a populated
+                "tplib" subdirectory of the game root folder. Note
+                that it includes the GPL and LGPL and the
+                ReadMe.ThirdParty.html file (required for GNU
+                license compliance).</p>
+              </div>
+
+              <div class="section">
+                <h6 class="section"><a name=
+                "setupengine.linux.compile.build_exe.make_programlauncher"></a><a name = "HeaderLink28"></a>                Make the Program Launcher</h6>
+
+                <p>If the end user tries to run "mygame.dynamic"
+                directly, chances are that it won't work because
+                the "tplib" directory is not in the library path by
+                default. We fix this problem by using a shell
+                script to start the game; the script sets the
+                library path and runs the game executable, passing
+                it any command line arguments. The script is
+                simple:</p>
+
+                <table border="0">
+                  <tbody>
+                    <tr>
+                      <td>#!/bin/sh</td>
+                    </tr>
+
+                    <tr>
+                      <td>export
+                      LD_LIBRARY_PATH="tplib:$LD_LIBRARY_PATH"</td>
+                    </tr>
+
+                    <tr>
+                      <td>./mygame.dynamic $@</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <br>
+                 
+
+                <p>Put this into a file called "mygame" (or
+                whatever your game title is) in the game root
+                directory, and make the file executable with <em>
+                chmod +x mygame</em> . Users will start the game
+                using this file.</p>
+              </div>
+
+              <div class="section">
+                <h6 class="section"><a name=
+                "setupengine.linux.compile.build_exe.make_tar"></a><a name = "HeaderLink29"></a>                Build the tar File</h6>
+
+                <p>Now its time to build the tar file, or "tarball"
+                as it is sometimes called. First, a cosmetic item.
+                If the game root is still called "example", you may
+                want to make a symlink to it so that the tarball
+                doesn't contain that name:</p>
+
+                <table border="0">
+                  <tbody>
+                    <tr>
+                      <td>ln -s example MyGame</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <br>
+                 
+
+                <p>The first argument will be used to name the tar
+                file. The second indicates the subdirectory that is
+                the game root directory. A third optional argument
+                is a "release tag", which is just a string that
+                will be inserted into the filename. Running this
+                command will produce a tarball that looks like
+                this:</p>
+
+                <table border="0">
+                  <tbody>
+                    <tr>
+                      <td>mygame-06-16-2002.tar.bz2</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <br>
+                 
+
+                <p>Note that the filename includes the game name
+                and the date the tar was built. Isn't that nice.
+                Note also that bzip2 compression is used to reduce
+                file size. One way that users can unpack this file
+                is with:</p>
+
+                <table border="0">
+                  <tbody>
+                    <tr>
+                      <td>tar -xvjf mygame-06-16-2002.tar.bz2</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <br>
+              </div>
+
+              <div class="section">
+                <h6 class="section"><a name=
+                "setupengine.linux.compile.build_exe.test_package"></a><a name = "HeaderLink30"></a>                Test the Package</h6>
+
+                <p>The most important step. The binary package
+                won't do much good if it's broken, right?! A basic
+                sniff test is to unpack the package on the system
+                on which it was built. Make sure it starts
+                correctly, sound works, etc... When you're
+                confident that it isn't obviously broken, its worth
+                trying the package out on a few different linux
+                systems, especially different distros or different
+                versions of the same distro. Gentoo/Debian and
+                other non-canned distributions are great test
+                cases.</p>
+              </div>
+            </div>
+
+            <div class="section">
+              <h5 class="section"><a name=
+              "setupengine.linux.compile.build_exe.notes"></a><a name = "HeaderLink31"></a>              Notes</h5>
+
+              <div class="section">
+                <h6 class="section"><a name=
+                "setupengine.linux.compile.build_exe.notes.file_redirection"></a><a name = "HeaderLink32"></a>                File Redirection</h6>
+
+                <p>By default, the unix build will redirect file
+                writes to a directory in the user's home directory
+                called ~/.garagegames/exename. This allows the game
+                to be installed in a directory that the user
+                doesn't have write access to (for example
+                /usr/local/games). The downside is that this makes
+                modding the game more complicated (user's have to
+                know to look for scripts in the home directory, and
+                files created by the editor will be stored
+                there).</p>
+
+                <p>You can disable -DUSE_FILE_REDIRECT in
+                conf.UNIX.mk. This way, files will be created in
+                the game root directory, just like the windows/mac
+                versions. It's your call whether to build the
+                executable with this enabled or not.</p>
+              </div>
+
+              <div class="section">
+                <h6 class="section"><a name=
+                "setupengine.linux.compile.build_exe.notes.static_linking"></a><a name = "HeaderLink33"></a>                Static Linking</h6>
+
+                <p>You may be thinking: "This process is complex.
+                Why not just build a fully statically linked
+                binary?" There are a few reasons:</p>
+
+                <ul>
+                  <li>
+                    <p>Every fully statically linked binary we've
+                    tested crashed when loading NVIDIA's libGL.so.
+                    There is apparently a way to do it (see Loki's
+                    tribes2 binary), but the procedure is
+                    obscure.</p>
+                  </li>
+
+                  <li>
+                    <p>A statically linked binary violates the
+                    LGPL, because of SDL and all the glibc
+                    libraries. This is true even if you also
+                    include a dynamically linked binary: although
+                    you are preserving the spirit of the LGPL by
+                    including the dynamic binary, the static one is
+                    technically a problem.</p>
+                  </li>
+                </ul>
+                <br>
+                <br>
+                 
+
+                <p>Still, if someone comes up with the procedure
+                for making a fully statically linked binary that
+                doesn't crash, we'd be glad to hear it. Send email
+                to <a href="mailto:jmquigs@bigfoot.com" target=
+                "_top">jmquigs@bigfoot.com</a> .</p>
+
+                <p>Okey dokey, all done, now have fun! Now that
+                you've built the demo, read the <a href=
+                "setupengine.demoapp.html">Torque Demo Application
+                section</a> to learn how to use it!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tge/official/content/documentation/Engine/Linux.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:22:20 GMT -->
+</html>
+

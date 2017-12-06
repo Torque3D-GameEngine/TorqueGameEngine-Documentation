@@ -1,0 +1,637 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+  
+<!-- Mirrored from docs.garagegames.com/tge/official/content/documentation/Engine/DemoApp.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:22:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../index.html";</SCRIPT><link href="../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 14;
+   parent.leftFrame.expandToItem('tree2', 'doc14');
+   var element = parent.leftFrame.document.getElementById('doc14');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+	<link rel="stylesheet" type="text/css"  href="images/gemdoc.css" title="gemdoc_auto_stylesheet">
+
+    <title>Using the Torque Demo Application</title>
+    <meta name="GENERATOR" content=
+    "Modular DocBook HTML Stylesheet Version 1.7">
+    <link rel="HOME" title="Setting Up the Torque Game Engine"
+    href="index.html">
+    <link rel="PREVIOUS" title="Setting up the Torque SDK on Linux"
+    href="setupengine.linux.html">
+    <link rel="NEXT" title="Summary" href=
+    "setupengine.summary.html">
+  
+
+<meta name="Generator" content="GemDoc"/>
+
+</head>
+
+  <BODY id = "BODYID" onLoad = "initComponent()"  class="section" bgcolor="#FFFFFF" text="#000000" link=
+  "#0000FF" vlink="#840084" alink="#0000FF">
+
+    <div class="section">
+      <h8 class="titleText"><a name="setupengine.demoapp"></a><a name = ""></a>Using       the Torque Demo Application</h1>
+
+      <div class="section">
+        <h2 class="section"><a name=
+        "setupengine.demoapp.demoapp.overview"></a><a name = "HeaderLink1"></a>Overview</h2>
+
+        <p>The Torque test application, <em>torqueDemo</em>,
+        provides a simple foundation for creating network
+        multi-player <a href=
+        "setupengine.demoapp.html#setupengine.demoapp.mods">games
+        and mods</a> as well as support for the in-game <a href=
+        "setupengine.demoapp.html#setupengine.demoapp.tools">
+        tools</a> . The current example game is a first-person
+        shooter (fps) death-match game which is loaded by
+        default.</p>
+
+        <p>The example fps game is meant to exercise some of the
+        Torque Engine's basic functionality. It is not meant to be
+        a complete demonstration of the Torque Engine's
+        capabilities, nor a thorough example of it's many
+        features.</p>
+      </div>
+
+      <div class="section">
+        <h2 class="section"><a name="setupengine.demoapp.runapp"></a><a name = "HeaderLink2"></a>        Running the Application</h2>
+
+        <p>Before running the demo application, make sure your
+        system meets the <span class="productname">Torque Game
+        Engine</span> system requirements for your platform: <a
+        href="setupengine.win.html#setupengine.win.preparesystem">
+        Windows</a>, <a href=
+        "setupengine.mac.html#setupengine.mac.preparesystem">Mac
+        OSX</a>, <a href=
+        "setupengine.linux.html#setupengine.linux.preparesystem">
+        Linux</a>.</p>
+
+        <p>The <em>torqueDemo</em> test application must be
+        executed from the <em>/torque/example</em> directory which
+        is the root of the example resource tree. The <em>
+        /torque/example</em> directory is completely
+        self-contained: it holds all the scripts, art and other
+        data needed to run the test app. Running the app. from the
+        command line:</p>
+
+        <pre class = "code">color="#000000"></font> 
+<pre class="screen">
+<font color="#000000">       cd c:\torque\example
+        torqueDemo
+               </pre>
+        <br>
+        <br>
+         
+
+        <p>The demo app may be run in two modes: with or without
+        the client interface. Running the client graphics interface
+        is the default behavior. Running the app in "dedicated"
+        mode skips the graphics and client interface
+        initialization. This mode is used to run dedicated game
+        servers and consumes less resources, but is not directly
+        playable. You must connect to a dedicated server using
+        another instance of the test app running in client mode. To
+        enter dedicated mode using command arguments, type the
+        following at a command line:</p>
+
+        <pre class = "code">color="#000000"></font> 
+<pre class="screen">
+<font color="#000000">       cd c:\torque\example
+        torqueDemo -dedicated -mission fps\data\missions\test1.mis
+               </pre>
+        <br>
+        <br>
+         
+
+        <p>Games (servers) can also be hosted through the client
+        interface, and a client may play the game being hosted.</p>
+
+        <p><em>Note:</em> for Mac users, command line arguments can
+        be placed in a text file called <em>maccmdline.txt</em> in
+        the <em>example</em> directory.</p>
+      </div>
+
+      <div class="section">
+        <h2 class="section"><a name=
+        "setupengine.demoapp.commandline_arguments"></a><a name = "HeaderLink3"></a>Torque Demo         Command Line Arguments</h2>
+
+        <p>torqueDemo [-fullscreen] [-windowed] [-noSound]
+        [-openGL] [-directX] [-voodoo2] [-autoVideo] [-prefs file]
+        [-dedicated] [-mission mission] [-connect address] [-log
+        level] [-mod modName] [-game gameName] [-show shapeFile]
+        [-console] [-jSave file] [-jPlay file] [-jDebug file]
+        [-help]</p>
+
+        <div class="variablelist">
+          <p><b>Command Line Parameters</b></p>
+
+          <dl>
+            <dt>-fullscreen</dt>
+
+            <dd>
+              <p>Run in fullscreen mode</p>
+            </dd>
+
+            <dt>-windowed</dt>
+
+            <dd>
+              <p>Run in a window</p>
+            </dd>
+
+            <dt>-noSound</dt>
+
+            <dd>
+              <p>Disable sound</p>
+            </dd>
+
+            <dt>-openGL</dt>
+
+            <dd>
+              <p>Use the OpenGL driver</p>
+            </dd>
+
+            <dt>-autoVideo</dt>
+
+            <dd>
+              <p>Autodetect the video driver</p>
+            </dd>
+
+            <dt>-prefs</dt>
+
+            <dd>
+              <p>Load the given config file</p>
+            </dd>
+
+            <dt>-dedicated</dt>
+
+            <dd>
+              <p>Run as a dedicated server</p>
+            </dd>
+
+            <dt>-mission mission</dt>
+
+            <dd>
+              <p>Load the given mission.</p>
+            </dd>
+
+            <dt>-connect address</dt>
+
+            <dd>
+              <p>Connect to a server</p>
+            </dd>
+
+            <dt>-log level</dt>
+
+            <dd>
+              <p>Set the log level = [0,1,2]</p>
+            </dd>
+
+            <dt>-mod modName</dt>
+
+            <dd>
+              <p>Load the specified <a href=
+              "setupengine.demoapp.html#setupengine.demoapp.mods">
+              mod</a></p>
+            </dd>
+
+            <dt>-game gameName</dt>
+
+            <dd>
+              <p>Load the specified <a href=
+              "setupengine.demoapp.html#setupengine.demoapp.mods">
+              game</a>, clears all previously loaded mods</p>
+            </dd>
+
+            <dt>-show [file.dts]</dt>
+
+            <dd>
+              <p>Start the <a href=
+              "setupengine.demoapp.html#setupengine.demoapp.tools">
+              show</a> mod and optionally load the specified
+              file</p>
+            </dd>
+
+            <dt>-console</dt>
+
+            <dd>
+              <p>Start up a separate console window</p>
+            </dd>
+
+            <dt>-jSave file</dt>
+
+            <dd>
+              <p>Record a journal</p>
+            </dd>
+
+            <dt>-jPlay file</dt>
+
+            <dd>
+              <p>Play back a journal</p>
+            </dd>
+
+            <dt>-jDebug file</dt>
+
+            <dd>
+              <p>Same as jPlay, except that a debug break (int3) is
+              issued when the journal ends</p>
+            </dd>
+
+            <dt>-help</dt>
+
+            <dd>
+              <p>Display this help to the console</p>
+            </dd>
+          </dl>
+        </div>
+        <br>
+        <br>
+      </div>
+
+      <div class="section">
+        <h2 class="section"><a name=
+        "setupengine.demoapp.key_bindings"></a><a name = "HeaderLink4"></a>Key Bindings</h2>
+
+        <p>The following list details some of the default key
+        bindings used in the demo fps game. The script file which
+        binds these keys can be found in the <em>
+        torque/fps/client/scripts/default.bind.cs</em> file.</p>
+
+        <div class="variablelist">
+          <p><b>Movement</b></p>
+
+          <dl>
+            <dt>w</dt>
+
+            <dd>
+              <p>Forward</p>
+            </dd>
+
+            <dt>s</dt>
+
+            <dd>
+              <p>Backward</p>
+            </dd>
+
+            <dt>a</dt>
+
+            <dd>
+              <p>Left</p>
+            </dd>
+
+            <dt>d</dt>
+
+            <dd>
+              <p>Right</p>
+            </dd>
+
+            <dt>space</dt>
+
+            <dd>
+              <p>Jump</p>
+            </dd>
+          </dl>
+        </div>
+        <br>
+        <br>
+         
+
+        <div class="variablelist">
+          <p><b>View Control</b></p>
+
+          <dl>
+            <dt>e</dt>
+
+            <dd>
+              <p>Zoom</p>
+            </dd>
+
+            <dt>r</dt>
+
+            <dd>
+              <p>Set Zoom FOV</p>
+            </dd>
+
+            <dt>TAB</dt>
+
+            <dd>
+              <p>First/Third person</p>
+            </dd>
+
+            <dt>alt c</dt>
+
+            <dd>
+              <p>Toggle between camera and player</p>
+            </dd>
+          </dl>
+        </div>
+        <br>
+        <br>
+         
+
+        <div class="variablelist">
+          <p><b>Chat Messaging</b></p>
+
+          <dl>
+            <dt>u</dt>
+
+            <dd>
+              <p>Send public chat message</p>
+            </dd>
+
+            <dt>y</dt>
+
+            <dd>
+              <p>Send team chat message</p>
+            </dd>
+          </dl>
+        </div>
+        <br>
+        <br>
+         
+
+        <div class="variablelist">
+          <p><b>Misc. Functions</b></p>
+
+          <dl>
+            <dt>F1</dt>
+
+            <dd>
+              <p>In-game help dialog box</p>
+            </dd>
+
+            <dt>F7</dt>
+
+            <dd>
+              <p>Switch control to the player and position him at
+              the camera</p>
+            </dd>
+
+            <dt>F8</dt>
+
+            <dd>
+              <p>Switch control to the camera and position it at
+              the player</p>
+            </dd>
+
+            <dt>F9</dt>
+
+            <dd>
+              <p>Toggle between outline, interior debug, and normal
+              rendering modes</p>
+            </dd>
+
+            <dt>F10</dt>
+
+            <dd>
+              <p>Toggle the Gui Editor</p>
+            </dd>
+
+            <dt>F11</dt>
+
+            <dd>
+              <p>Toggle the Mission Editor</p>
+            </dd>
+          </dl>
+        </div>
+        <br>
+        <br>
+      </div>
+
+      <div class="section">
+        <h2 class="section"><a name="setupengine.demoapp.mods"></a><a name = "HeaderLink5"></a>        Games and Mods</h2>
+
+        <p>The test application is designed to support multiple
+        games, each possibly running multiple mods (mods are 3rd
+        party <em>mod</em>ifications). This is possible because the
+        C++ game code contains a flexible set of core features
+        (such as GUI controls, player movement and animation, etc.)
+        which are all controlled from the scripting language. Thus,
+        new games can be implemented with Torque by simply
+        providing new scripts and art.</p>
+
+        <p>Games and mods are organized into application level root
+        directories and can be explicitly loaded from the command
+        line using the <em>-game name</em> and <em>-mod name</em>
+        command line arguments. Only a single game can be loaded at
+        a time, but multiple mods may be loaded on top of a game.
+        When a game is loaded it only has access the <em>
+        common</em> directory, which contains core scripts and data
+        shared by games, as well as it's own directory.</p>
+
+        <p>Examples of loading games and mods:</p>
+
+        <pre class = "code">color="#000000"></font> 
+<pre class="screen">
+<font color="#000000">       cd c:\torque\example
+        torqueDemo -game fps
+        torqueDemo -game fps -mod show
+               </pre>
+        <br>
+        <br>
+      </div>
+
+      <div class="section">
+        <h2 class="section"><a name="setupengine.demoapp.tools"></a><a name = "HeaderLink6"></a>        In-Game Tools</h2>
+
+        <p>A number of Torque Engine tools are built in to the test
+        application, and subsequently into any game that uses the
+        example application's basic infrastructure. These
+        include:</p>
+
+        <div class="variablelist">
+          <dl>
+            <dt>Mission Editor</dt>
+
+            <dd>
+              <p>The mission editor is the primary tool for
+              creating and editing mission files. The editor is
+              comprised of several sub-components including a World
+              Editor which includes an object creator, object
+              inspector and mission area editor, as well as a
+              Terrain Editor which includes a height field editor,
+              terrain generator and rule based texture painting
+              tool. Mission can be edited on-the-fly: when in a
+              mission, the editor may be activated using the F11
+              key.</p>
+            </dd>
+
+            <dt>GUI Editor</dt>
+
+            <dd>
+              <p>The GUI Editor is used to create and edit in-game
+              GUI screens. This includes the mains startup screen,
+              pop-ups, dialog boxes, etc. GUI screens can be edited
+              on-the-fly. The editor is activated using the F10
+              key.</p>
+            </dd>
+
+            <dt>Show Tool</dt>
+
+            <dd>
+              <p>Though Show is not strictly an in-game tool (in
+              that it's not activated while playing a game), it's
+              listed here because it's implemented as a " <a href=
+              "setupengine.demoapp.html#setupengine.demoapp.mods">
+              mod</a> ". The show tool is used to load and test DTS
+              files. The tool provides a number of dialog boxes for
+              testing shapes include running animation threads,
+              testing details levels, etc.</p>
+            </dd>
+          </dl>
+        </div>
+        <br>
+        <br>
+      </div>
+
+      <div class="section">
+        <h2 class="section"><a name="setupengine.demoapp.tree"></a><a name = "HeaderLink7"></a>        Application Directory Tree</h2>
+
+        <p>The c:\torque\example is the root of test application
+        and contains all the scripts, art, and other data need to
+        run the test app. Except for <em>common</em>, directories
+        in this application root represent loadable <a href=
+        "setupengine.demoapp.html#setupengine.demoapp.mods">games
+        and mods</a> .</p>
+
+        <p>Located in the <em>c:\torque\example</em> directory:</p>
+
+        <div class="variablelist">
+          <dl>
+            <dt>\common</dt>
+
+            <dd>
+              <p>Common is not a true mod or game, but actually
+              contains the script infrastructure used by games, as
+              well as the scripts and data needed to run the <a
+              href=
+              "setupengine.demoapp.html#setupengine.demoapp.tools">
+              in-game tools</a> .</p>
+
+              <div class="variablelist">
+                <dl>
+                  <dt>\client</dt>
+
+                  <dd>
+                    <p>Basic client support scripts include
+                    client-&gt;server communication</p>
+                  </dd>
+
+                  <dt>\debugger</dt>
+
+                  <dd>
+                    <p>Support scripts for the in-game script
+                    debugger</p>
+                  </dd>
+
+                  <dt>\editor</dt>
+
+                  <dd>
+                    <p>Support for <a href=
+                    "setupengine.demoapp.html#setupengine.demoapp.tools">
+                    in-game tools</a></p>
+                  </dd>
+
+                  <dt>\help</dt>
+
+                  <dd>
+                    <p>Client help dialog box pages</p>
+                  </dd>
+
+                  <dt>\lighting</dt>
+
+                  <dd>
+                    <p>Textures used for run-time, multi-pass
+                    dynamic lighting</p>
+                  </dd>
+
+                  <dt>\server</dt>
+
+                  <dd>
+                    <p>Basic server support scripts including
+                    server-&gt;client communication</p>
+                  </dd>
+
+                  <dt>\ui</dt>
+
+                  <dd>
+                    <p>Misc. GUI controls and textures used by the
+                    in-game tools.</p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+
+            <dt>\fps</dt>
+
+            <dd>
+              <p>Fps contains the scripts, art and missions that
+              implement the example first person shooter game.</p>
+
+              <div class="variablelist">
+                <dl>
+                  <dt>\client</dt>
+
+                  <dd>
+                    <p>Client user interface and game scripts</p>
+                  </dd>
+
+                  <dt>\data</dt>
+
+                  <dd>
+                    <p>The root of the data tree which is shared by
+                    the client and server. This includes buildings,
+                    mission files, shapes, textures, skies, sounds,
+                    terrains and water.</p>
+                  </dd>
+
+                  <dt>\server</dt>
+
+                  <dd>
+                    <p>Scripts which implement the actual fps game
+                    run by the server. This directory is only
+                    accessed by dedicated servers and clients which
+                    hosts games.</p>
+                  </dd>
+                </dl>
+              </div>
+              <br>
+              <br>
+            </dd>
+
+            <dt>\show</dt>
+
+            <dd>
+              <p>A <a href=
+              "setupengine.demoapp.html#setupengine.demoapp.mods">
+              mod</a> which contains all the user interface and
+              scripts which implement the Show Tool.</p>
+            </dd>
+          </dl>
+        </div>
+        <br>
+        <br>
+      </div>
+    </div>
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tge/official/content/documentation/Engine/DemoApp.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:22:21 GMT -->
+</html>
+

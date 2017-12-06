@@ -1,0 +1,815 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+  
+<!-- Mirrored from docs.garagegames.com/tge/official/content/documentation/Artists/Missions/Manipulator.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:22:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 8;
+   parent.leftFrame.expandToItem('tree2', 'doc8');
+   var element = parent.leftFrame.document.getElementById('doc8');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+	<link rel="stylesheet" type="text/css"  href="images/gemdoc.css" title="gemdoc_auto_stylesheet">
+
+    <title>World Editor (Manipulator)</title>
+    <meta name="GENERATOR" content=
+    "Modular DocBook HTML Stylesheet Version 1.7">
+    <link rel="HOME" title="Mission Editor Introduction" href=
+    "index.html">
+    <link rel="PREVIOUS" title="The Mission Editor Tools" href=
+    "missioneditor.tools.html">
+    <link rel="NEXT" title="World Editor (Inspector)" href=
+    "missioneditor.inspector.html">
+  
+
+<meta name="Generator" content="GemDoc"/>
+
+</head>
+
+  <BODY id = "BODYID" onLoad = "initComponent()"  class="section" bgcolor="#FFFFFF" text="#000000" link=
+  "#0000FF" vlink="#840084" alink="#0000FF">
+
+    <div class="section">
+      <h8 class="titleText"><a name="missioneditor.manipulator"></a><a name = ""></a>      World Editor (Manipulator)</h1>
+
+      <p>Starting The Manipulator</p>
+
+      <div class="procedure">
+        <ol type="1">
+          <li>Start the Mission Editor by pressing F11.</li>
+
+          <li>Start the Manipulator by pressing F2.</li>
+        </ol>
+      </div>
+
+      <div class="section">
+        <h2 class="section"><a name=
+        "missioneditor.manipulator.worldview"></a><a name = "HeaderLink1"></a>The 3D World View         Window</h2>
+
+        <p>The real benefit of the Manipulator tool comes from the
+        fact that you can traverse the world and the 3D World View
+        is not blocked by any dialogs or menus (except for the
+        Mission Editor Menu), giving you an almost-full screen view
+        while you manipulate objects via mouse and hot-keys. Upon
+        examination, it can be seen that this tool is very plain
+        (likely as intended). In the sample view above, we can see
+        the world and its contents. As well, we can apply all
+        standard mouse manipulations as described in <em>Mission
+        Editor Basics</em>.</p>
+      </div>
+
+      <div class="section">
+        <h2 class="section"><a name=
+        "missioneditor.manipulator.worldmenus"></a><a name = "HeaderLink2"></a>World Editor         Menus</h2>
+
+        <p>All World Editor Tools have a top menu containing the
+        same elements. However, in some tools, certain menu
+        selections will be disabled. The following tables give a
+        brief description of each menu and the menus choices. Some
+        options descriptions will be deferred till we discuss the
+        specific tool that is affected by said option.</p>
+
+        <div class="section">
+          <h3 class="section"><a name=
+          "missioneditor.manipulator.worldmenus.filemenu"></a><a name = "HeaderLink3"></a>File           Menu</h3>
+
+          <div class="table">
+            <a name="AEN458"></a> 
+
+            <p><b>Table 1-12.</b></p>
+
+            <table border="0" width="100%" class="CALSTABLE">
+              <tbody>
+                <tr>
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <div class="mediaobject">
+                      <p><img src="images/filemenu.jpg">
+                      </p>
+                    </div>
+                  </td>
+
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <p>New Mission</p>
+
+                    <p>Clicking this option will generate a new
+                    mission based on preset values which can be
+                    found at <em>
+                    example\egt\data\newmission.mis</em>. This
+                    generates the same mission every time.</p>
+
+                    <div class="caution">
+                      <table class="caution" width="100%" border=
+                      "0">
+                        <tr>
+                          <td width="25" align="CENTER" valign=
+                          "TOP"><img src="images/caution.gif"
+                          hspace="5" alt="Caution"></td>
+
+                          <td align="LEFT" valign="TOP">This wipes
+                          wipe out the current mission. If done at
+                          all, it should be done once and only
+                          once, before editing.</td>
+                        </tr>
+                      </table>
+                    </div>
+                    <br>
+                     <br>
+                     
+
+                    <p>Open Mission (CTRL + O)</p>
+
+                    <p>Brings up a dialog to allow you to load an
+                    existing mission. Currently, I suggest that you
+                    do not use this method to switch back and forth
+                    between missions while editing. Instead, I
+                    suggest editing one mission per session (i.e.
+                    per run of the SDK).</p>
+
+                    <p>Save Mission (CTRL + S)</p>
+
+                    <p>This saves your current mission.</p>
+
+                    <p>Save Mission As</p>
+
+                    <p>As with <em>Save Mission</em>, this allows
+                    you to save your mission, but in this case, you
+                    can specify a name and (existing) directory for
+                    the mission file.</p>
+
+                    <p>Import Terraform Data</p>
+
+                    <p>This choice allows you to load the <em>
+                    terraform</em> data from another mission.
+                    Basically, this replaced the current height-map
+                    with a selected mission's height-map data.
+                    Terrain texturing is unchanged.</p>
+
+                    <p>Import Texture Data</p>
+
+                    <p>This choice should allow you to load the
+                    <em>texture</em> data from another mission, but
+                    alas, it does not work.</p>
+
+                    <p>Export Terraform Bitmap</p>
+
+                    <p>This choices is enabled by the Terraformer
+                    tool. We will discuss it there.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section"><a name=
+          "missioneditor.manipulator.worldmenus.editmenu"></a><a name = "HeaderLink4"></a>Edit           Menu</h3>
+
+          <div class="table">
+            <a name="AEN498"></a> 
+
+            <p><b>Table 1-13.</b></p>
+
+            <table border="0" width="100%" class="CALSTABLE">
+              <tbody>
+                <tr>
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <div class="mediaobject">
+                      <p><img src="images/editmenu.jpg">
+                      </p>
+                    </div>
+                  </td>
+
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <p>Undo (CTRL + Z)</p>
+
+                    <p>Undo the last operation.</p>
+
+                    <div class="caution">
+                      <table class="caution" width="100%" border=
+                      "0">
+                        <tr>
+                          <td width="25" align="CENTER" valign=
+                          "TOP"><img src="images/caution.gif"
+                          hspace="5" alt="Caution"></td>
+
+                          <td align="LEFT" valign="TOP">This DOES
+                          NOT undo all operations, so back up early
+                          and often.</td>
+                        </tr>
+                      </table>
+                    </div>
+
+                    <p>Redo (CTRL + R)</p>
+
+                    <p>Redoes last operation. As with undo, this
+                    does not apply to all operations.</p>
+
+                    <p>Cut (CTRL + X)</p>
+
+                    <p>Copy (CTRL + C)</p>
+
+                    <p>Paste (CTRL + V)</p>
+
+                    <p>Standard cut-copy-paste. Can be applied to
+                    single and multiple objects.</p>
+
+                    <p>Select All (CTRL + A) BROKEN</p>
+
+                    <p>Selects all objects (shapes and interiors)
+                    in the mission.</p>
+
+                    <p>Select None (CTRL + N)</p>
+
+                    <p>Deselects all objects (shapes and interiors)
+                    in the mission. BROKEN</p>
+
+                    <p>B. Deselect previously selected terrain.
+                    This does work.</p>
+
+                    <p>Relight Scene (ALT + L)</p>
+
+                    <p>Causes the engine to relight the current
+                    terrain and apply shadow maps. This trips a lot
+                    of beginners up. I will discuss this further
+                    when we learn about adding interiors.</p>
+
+                    <p>World Editor Settings</p>
+
+                    <p>This brings up the World Editor Settings
+                    Dialog. (Discussed below.)</p>
+
+                    <p>Terrain Editor Settings</p>
+
+                    <p>This feature relates to the Terrain editor
+                    and will be discussed there.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section"><a name=
+          "missioneditor.manipulator.worldmenus.worldeditorsetting"></a><a name = "HeaderLink5"></a>          World Editor Settings</h3>
+
+          <div class="table">
+            <a name="AEN539"></a> 
+
+            <p><b>Table 1-14.</b></p>
+
+            <table border="0" width="100%" class="CALSTABLE">
+              <tbody>
+                <tr>
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <div class="mediaobject">
+                      <p><img src=
+                      "images/worldeditorsettings.jpg"></p>
+                    </div>
+                  </td>
+
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <p>Render Plane</p>
+
+                    <p>Show plane when objects are selected</p>
+
+                    <p>Render Plane Hashes</p>
+
+                    <p>Show hashes when objects are selected.</p>
+
+                    <p>Render Object Text</p>
+
+                    <p>Show objects' names and IDs.</p>
+
+                    <p>Render Object Handle</p>
+
+                    <p>Show objects' handles (red dot).</p>
+
+                    <p>Render Selection Box</p>
+
+                    <p>Show selection boxes.</p>
+
+                    <p>Plane Extent</p>
+
+                    <p>Length by width dimensions of plane
+                    (floating point OK).</p>
+
+                    <p>Grid Size</p>
+
+                    <p>Hash spacing for grid (floating point
+                    OK).</p>
+
+                    <p>Show Mouse Popup Info</p>
+
+                    <p>Show mouse popup scales when
+                    moving-rotating-scaling.</p>
+
+                    <p>Move Scale</p>
+
+                    <p>Rotate Scale</p>
+
+                    <p>Scale Scale</p>
+
+                    <p>These values increase or decrease mouse
+                    sensitivity for individual mouse actions (move,
+                    rotate, scale).</p>
+
+                    <p>Planar Movement</p>
+
+                    <p>Checked - Object will move along plane when
+                    dragged.</p>
+
+                    <p>Unchecked - Object will attempt to follow
+                    terrain when dragged.</p>
+
+                    <p>Does not apply to vertical gizmo drags.</p>
+
+                    <p>Collide with Object's Bounding Box</p>
+
+                    <p>If checked, object can be selected by
+                    placing cursor anywhere on objects bounding
+                    box.</p>
+
+                    <p>Objects Use Box Center</p>
+
+                    <p>If checked, handle is in object center,
+                    otherwise at lower limit of object bounding
+                    box.</p>
+
+                    <p>Axis Gizmo Active</p>
+
+                    <p>Enable gizmo.</p>
+
+                    <p>Min Scale Factor</p>
+
+                    <p>(Max) Scale Factor</p>
+
+                    <p>Determine min and max multiple by which
+                    objects can be scaled from original size.</p>
+
+                    <p>Visible Distance</p>
+
+                    <p>Min distance within which object handles are
+                    visible/selectable.</p>
+
+                    <p>This has nothing to do with visible distance
+                    during game play. Examine the SKY object for
+                    that.</p>
+
+                    <p>Gizmo Screen Len</p>
+
+                    <p>Gizmo axis length in screen pixels.</p>
+
+                    <p>Project Distance</p>
+
+                    <p>Ray-length for selection cursor.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section"><a name=
+          "missioneditor.manipulator.worldmenus.worldeditorsettingtips"></a><a name = "HeaderLink6"></a>          World Editor Settings (Editing Tips)</h3>
+
+          <p>The parameters on this very compact dialog are meant
+          to assist you when you are editing a mission. Their main
+          purpose is to make your life easier. In that vein, here
+          are some common editing problems and solutions:</p>
+
+          <div class="table">
+            <a name="AEN610"></a> 
+
+            <p><b>Table 1-15.</b></p>
+
+            <table border="0" width="100%" class="CALSTABLE">
+              <thead>
+                <tr>
+                  <th width="50%" align="LEFT" valign="MIDDLE">
+                  Problem</th>
+
+                  <th width="50%" align="LEFT" valign="MIDDLE">
+                  Solution</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <p>Having difficulty placing objects within a
+                    specific distance of each other.</p>
+                  </td>
+
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <p>Adjust the plane extent to twice the
+                    distance you require (distance from
+                    centroid/handle). Then, set grid size to 1/10th
+                    multiple of distance of interest. Now you can
+                    use the grid like a ruler.</p>
+
+                    <p>Example: If you wish to place an object 0.9
+                    meters from another:</p>
+
+                    <div class="procedure">
+                      <ol type="1">
+                        <li>Set extent to 2.0</li>
+
+                        <li>Set grid size to 0.1</li>
+                      </ol>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <p>Too many labels visible.</p>
+                  </td>
+
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <div class="procedure">
+                      <ol type="1">
+                        <li>Disable <em>Render Object
+                        Text</em>(Good)</li>
+
+                        <li>Reduce <em>Visible
+                        Distance</em>(Better)</li>
+                      </ol>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <p>Having difficulty scaling exactly.</p>
+                  </td>
+
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <p>Example: If you want to scale an object to
+                    2.75 times its original size:</p>
+
+                    <div class="procedure">
+                      <ol type="1">
+                        <li>Set <em>Min Scale Factor</em>to
+                        1.0</li>
+
+                        <li>Set <em>Max Scale Factor</em>to
+                        2.75</li>
+
+                        <li>Scale the object and Viola, exactly
+                        2.75!</li>
+                      </ol>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <p>You find yourself accidentally selecting
+                    objects that are far away.</p>
+                  </td>
+
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <div class="procedure">
+                      <ol type="1">
+                        <li>Reduce <em>Project
+                        Distance</em>(Good)</li>
+
+                        <li>Reduce <em>Visible
+                        Distance</em>(Better)</li>
+                      </ol>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <p>Your bots keep falling through the terrain
+                    when you drag them.</p>
+                  </td>
+
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <div class="procedure">
+                      <ol type="1">
+                        <li>Uncheck <em>Planar movement</em>.</li>
+
+                        <li>Uncheck <em>Objects Use Box
+                        Center</em></li>
+                      </ol>
+                    </div>
+
+                    <p>Your bots should now follow the terrain when
+                    you drag them.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section"><a name=
+          "missioneditor.manipulator.worldmenus.worldmenu"></a><a name = "HeaderLink7"></a>          World Menu</h3>
+
+          <div class="table">
+            <a name="AEN669"></a> 
+
+            <p><b>Table 1-16.</b></p>
+
+            <table border="0" width="100%" class="CALSTABLE">
+              <tbody>
+                <tr>
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <div class="mediaobject">
+                      <p><img src="images/worldmenu.jpg">
+                      </p>
+                    </div>
+                  </td>
+
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <p>Lock Selection</p>
+
+                    <p>Disable mouse actions (drag, rotate, scale)
+                    on current selection(s).</p>
+
+                    <p>This does not prevent changes via the
+                    inspector window although a little (L) will
+                    show up in the world editor tree.</p>
+
+                    <p>Unlock Selection</p>
+
+                    <p>Re-enable mouse actions on current
+                    selection(s).</p>
+
+                    <p>Hide Selection</p>
+
+                    <p>Hide (i.e. do not render) current
+                    selection(s).</p>
+
+                    <p>Show Selection</p>
+
+                    <p>Un-hide previously hidden object(s).</p>
+
+                    <p>Use the Inspector to select these objects.
+                    They have a little (L) next to them in the
+                    world editor tree.</p>
+
+                    <p>Delete Selection</p>
+
+                    <p>Delete current selection(s).</p>
+
+                    <p>Camera to Selection</p>
+
+                    <p>Move camera to centroid of current
+                    selection(s).</p>
+
+                    <p>Reset Transforms</p>
+
+                    <ul>
+                      <li>
+                        <p>Un-rotate selected objects that are
+                        rotated (i.e. align to objects' default
+                        alignment.)</p>
+                      </li>
+
+                      <li>
+                        <p>Un-scale selected objects that are
+                        scaled (i.e. scale all objects' dimensions
+                        to 100% of default scale.)</p>
+                      </li>
+
+                      <li>
+                        <p>Works for multi-select.</p>
+                      </li>
+                    </ul>
+
+                    <p>This is not the same as UNDO.</p>
+
+                    <p>Drop Selection</p>
+
+                    <p>Make currently selected object(s) drop
+                    according to drop current rule (see below).</p>
+
+                    <p>This may cause selected subterranean objects
+                    to rise to the surface.</p>
+
+                    <p>Add Selection to Instant Group</p>
+
+                    <p>We will discuss this feature when we discuss
+                    the Inspector.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section"><a name=
+          "missioneditor.manipulator.worldmenus.windowmenu"></a><a name = "HeaderLink8"></a>          Window Menu</h3>
+
+          <div class="table">
+            <a name="AEN719"></a> 
+
+            <p><b>Table 1-17.</b></p>
+
+            <table border="0" width="100%" class="CALSTABLE">
+              <tbody>
+                <tr>
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <div class="mediaobject">
+                      <p><img src="images/windowmenu.jpg">
+                      </p>
+                    </div>
+                  </td>
+
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <p>This menu is probably the most easily
+                    understood. It allows you to select which of
+                    the Mission Editor Tools you wish to use. The
+                    only important thing to remember is that you
+                    must use this menu to select the <em>Terrain
+                    Texture Painter</em> tool since there is no
+                    hot-key for it.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section"><a name=
+          "missioneditor.manipulator.worldmenus.dropat"></a><a name = "HeaderLink9"></a>Window           Menu</h3>
+
+          <div class="table">
+            <a name="AEN735"></a> 
+
+            <p><b>Table 1-18.</b></p>
+
+            <table border="0" width="100%" class="CALSTABLE">
+              <tbody>
+                <tr>
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <p>Drop at Origin</p>
+                  </td>
+
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <p>This causes new or pasted objects to be
+                    created at the World Origin.</p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <p>Drop at Camera</p>
+                  </td>
+
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <p>This causes new or pasted objects to be
+                    created at the current location of the current
+                    camera. You could think of there being three
+                    cameras.</p>
+
+                    <div class="procedure">
+                      <ol type="1">
+                        <li>One in the character's head during 1st
+                        POV viewing.</li>
+
+                        <li>A second in the following camera
+                        position during 3rd POV.</li>
+
+                        <li>And, the third being the actual free
+                        floating camera.</li>
+                      </ol>
+                    </div>
+
+                    <p>I've included an image below showing an
+                    object dropped in 1st and 3rd POV to clarify
+                    this.</p>
+
+                    <p>This causes new or pasted objects to be
+                    created at the World Origin.</p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <p>Drop at Camera w/Rot</p>
+                  </td>
+
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <p>This is supposed to do the same as <em>Drop
+                    at Camera</em> with the addition that the
+                    object will have the camera's rotation.</p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <p>Drop below Camera</p>
+                  </td>
+
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <p>In this mode, new objects are created
+                    somewhere below the current camera.</p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <p>Drop at Screen Center</p>
+                  </td>
+
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <p>This is the default <em>drop at</em> mode. I
+                    think this mode's title is a bit of a misnomer.
+                    Although I haven't looked at the code (shame on
+                    me), it seems that this behaves more in the
+                    following fashion:</p>
+
+                    <div class="procedure">
+                      <ol type="1">
+                        <li>Cast ray from camera eye</li>
+
+                        <li>On collision with object bounding box,
+                        water, or terrain, drop the object at point
+                        of collision.</li>
+
+                        <li>If ray extends beyond <em>Project
+                        Distance</em>(set in World Editor Dialog),
+                        drop object at camera eye (position).</li>
+                      </ol>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <p>Drop at Centroid</p>
+                  </td>
+
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <p>This would be a very useful placement
+                    option. It should allow you to select multiple
+                    objects and have the newly created object
+                    placed in the virtual centroid of the
+                    group.</p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <p>Drop to Ground</p>
+                  </td>
+
+                  <td width="50%" align="LEFT" valign="MIDDLE">
+                    <p>The official docs aren't clear on this, but
+                    my assumption on this mode the first time I saw
+                    it was that object should be dropped to the
+                    ground below the camera. No luck. Objects are
+                    dropped to the ground at Mission center. I
+                    wouldn't use this if there is any possibility
+                    that there could be an overlapping interior at
+                    the mission center, because dropping another
+                    interior there will crash the editor.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mediaobject">
+            <p><img src="images/dropatcam.png"></p>
+          </div>
+
+          <p>Drop at Camera (Ouch!!!)</p>
+        </div>
+      </div>
+    </div>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tge/official/content/documentation/Artists/Missions/Manipulator.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:22:16 GMT -->
+</html>
+

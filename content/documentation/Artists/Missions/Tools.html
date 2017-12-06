@@ -1,0 +1,895 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+  
+<!-- Mirrored from docs.garagegames.com/tge/official/content/documentation/Artists/Missions/Tools.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:21:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 11;
+   parent.leftFrame.expandToItem('tree2', 'doc11');
+   var element = parent.leftFrame.document.getElementById('doc11');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+	<link rel="stylesheet" type="text/css"  href="images/gemdoc.css" title="gemdoc_auto_stylesheet">
+
+    <title>The Mission Editor Tools</title>
+    <meta name="GENERATOR" content=
+    "Modular DocBook HTML Stylesheet Version 1.7">
+    <link rel="HOME" title="Mission Editor Introduction" href=
+    "index.html">
+    <link rel="PREVIOUS" title="Torque's Basic Editors Overview"
+    href="missioneditor.introduction.html">
+    <link rel="NEXT" title="World Editor (Manipulator)" href=
+    "missioneditor.manipulator.html">
+  
+
+<meta name="Generator" content="GemDoc"/>
+
+</head>
+
+  <BODY id = "BODYID" onLoad = "initComponent()"  class="section" bgcolor="#FFFFFF" text="#000000" link=
+  "#0000FF" vlink="#840084" alink="#0000FF">
+
+    <div class="section">
+      <h8 class="titleText"><a name="missioneditor.tools"></a><a name = ""></a>The       Mission Editor Tools</h1>
+
+      <p>Let us tackle the Mission Editor Toolset first as it has
+      the most components and is the most likely place to start for
+      creating a simple MOD or a new game.</p>
+
+      <p>As we investigate and learn how to use each of the Mission
+      Editor tools, please use the provided mission <em>Basic
+      Training</em> as current mission.</p>
+
+      <div class="caution">
+        <table class="caution" width="100%" border="0">
+          <tr>
+            <td width="25" align="CENTER" valign="TOP"><img src=
+            "images/caution.gif" hspace="5" alt="Caution"></td>
+
+            <td align="LEFT" valign="TOP">Before you experiment
+            with the editors on any existing mission, you should
+            back it up first. The easiest way to do this (for now)
+            is to create a backup copy of the entire <em>
+            egt/missions</em>directory. Please do this before
+            proceeding.</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="section">
+        <h2 class="section"><a name="missioneditor.tools.basics"></a><a name = "HeaderLink1"></a>        Mission Editor Basics</h2>
+
+        <p>Before leaping into the Mission Editor Tools, let us
+        review some basics that hold true for all of the tools. We
+        will review the user interface devices. Subsequently, we
+        will discuss the mechanics of movement and viewpoint
+        control, as well as object selection, translation,
+        rotation, and scaling.</p>
+
+        <div class="section">
+          <h3 class="section"><a name=
+          "missioneditor.tools.basics.devices"></a><a name = "HeaderLink2"></a>World Editor           Devices</h3>
+
+          <p>In this guide I refer to the cursors, menus, and other
+          graphical elements that you will encounter in the editors
+          as <em>Devices</em>. Simply stated, these devices provide
+          meaningful feedback to you regarding what action can or
+          should be taken. The terms below are mostly of my own
+          invention with the exclusion of the appropriately named
+          <em>gizmo</em>.</p>
+
+          <div class="section">
+            <h4 class="section"><a name=
+            "missioneditor.tools.basics.devices.cursors"></a><a name = "HeaderLink3"></a>            Cursors</h4>
+
+            <div class="table">
+              <a name="AEN93"></a> 
+
+              <p><b>Table 1-3.</b></p>
+
+              <table border="0" width="100%" class="CALSTABLE">
+                <tbody>
+                  <tr>
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>No Select Cursor</p>
+
+                      <div class="mediaobject">
+                        <p><img src=
+                        "images/cursornoselect.jpg"></p>
+                      </div>
+                    </td>
+
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                    When the cursor looks like this, it means that
+                    the cursor is not over a selectable object. In
+                    other words you are pointing to an <em>
+                    empty</em> space.</td>
+                  </tr>
+
+                  <tr>
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>Select Cursor</p>
+
+                      <div class="mediaobject">
+                        <p><img src=
+                        "images/cursorselect.jpg"></p>
+                      </div>
+                    </td>
+
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                    When the cursor looks like this it means that
+                    the cursor is over a selectable object or group
+                    of selectable objects.</td>
+                  </tr>
+
+                  <tr>
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>Grab Cursor</p>
+
+                      <div class="mediaobject">
+                        <p><img src=
+                        "images/cursorgrab.jpg"></p>
+                      </div>
+                    </td>
+
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                    When the cursor looks like this, it means that
+                    you have selected an object(s) and are holding
+                    down the left mouse button. You have grabbed
+                    the object(s).</td>
+                  </tr>
+
+                  <tr>
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>Rotate/Scale Cursor</p>
+
+                      <div class="mediaobject">
+                        <p><img src=
+                        "images/cursorrotate.jpg"></p>
+                      </div>
+                    </td>
+
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                    When the cursor looks like this, it means you
+                    have successfully selected an axis of the gizmo
+                    in either rotation or scaling modes. It also
+                    appears when you have successfully selected a
+                    bounding box face for scaling.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="section">
+            <h4 class="section"><a name=
+            "missioneditor.tools.basics.devices.gizmo"></a><a name = "HeaderLink4"></a>The             Gizmo and Gizmo Mouse Popup Scales</h4>
+
+            <div class="table">
+              <a name="AEN133"></a> 
+
+              <p><b>Table 1-4.</b></p>
+
+              <table border="0" width="100%" class="CALSTABLE">
+                <tbody>
+                  <tr>
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>The graphic on the right represents the
+                      gizmo. Subsequent screenshots will show the
+                      gizmo in action, but for the purpose of
+                      discussing it's use, this representation will
+                      be simpler to talk to.</p>
+
+                      <p>The gizmo is a device that is activated
+                      when you select one or more objects. It
+                      displays three traditional X-Y-Z axes.
+                      Individual axes are selectable and afford the
+                      ability to translate, rotate, and scale.</p>
+
+                      <p>By default, a gizmo-axis is dark-cyan when
+                      not selected and light-cyan when the cursor
+                      is over it or when it has been <em>
+                      grabbed</em>.</p>
+                    </td>
+
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <div class="mediaobject">
+                        <p><img src="images/gizmo.jpg"></p>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>This scale shows the current position of
+                      the object's centroid when you use the gizmo
+                      to translate an object.</p>
+                    </td>
+
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <div class="mediaobject">
+                        <p><img src=
+                        "images/gizmotranslate.jpg"></p>
+                      </div>
+
+                      <p>Gizmo Translation Scale</p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>This scale shows the current degrees of
+                      rotation around the selected axis when you
+                      use the gizmo to rotate an object.</p>
+                    </td>
+
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <div class="mediaobject">
+                        <p><img src=
+                        "images/gizmorotate.jpg"></p>
+                      </div>
+
+                      <p>Gizmo Rotation Scale</p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>This scale shows the current height,
+                      width, and depth of a object when you use the
+                      gizmo to scale it. (w,h,d) correspond to the
+                      (x,y,z) axes of the gizmo.</p>
+                    </td>
+
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <div class="mediaobject">
+                        <p><img src=
+                        "images/gizmoscale.jpg"></p>
+                      </div>
+
+                      <p>Gizmo Scaling Scale</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="section">
+            <h4 class="section"><a name=
+            "missioneditor.tools.basics.devices.menus"></a><a name = "HeaderLink5"></a>Menus             and Windows</h4>
+
+            <div class="table">
+              <a name="AEN178"></a> 
+
+              <p><b>Table 1-5.</b></p>
+
+              <table border="0" width="100%" class="CALSTABLE">
+                <tbody>
+                  <tr>
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>The World Editor provides a set of
+                      traditional menus for selecting the current
+                      tool as well as other features.</p>
+
+                      <p>I'll cover all of the menu options below
+                      in <em>World Editor Menus</em>.</p>
+                    </td>
+
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <div class="mediaobject">
+                        <p><img src=
+                        "images/worldeditormenu.jpg"></p>
+                      </div>
+
+                      <p>World Editor Menu</p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>Several of the tools have windows that
+                      appear on the right side of the screen.
+                      Although these windows have many similarities
+                      it will be better if I explain them
+                      individually. I will do this in the
+                      respective tool sections below. The bottom
+                      portion of the windows shown is from the HEAD
+                      release and looks slightly different from the
+                      1_1_2 and prior releases. Similar groups of
+                      fields have been grouped in drop-down frames.
+                      In 1_1_2 and before, all fields and buttons
+                      are in the same frame, which gets a little
+                      hard to read/search sometimes.</p>
+                    </td>
+
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <div class="mediaobject">
+                        <p><img src=
+                        "images/toolwindow.jpg"></p>
+                      </div>
+
+                      <p>Tool Window</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="section">
+            <h4 class="section"><a name=
+            "missioneditor.tools.basics.devices.selectionboxes"></a><a name = "HeaderLink6"></a>            Selection Boxes</h4>
+
+            <div class="table">
+              <a name="AEN205"></a> 
+
+              <p><b>Table 1-6.</b></p>
+
+              <table border="0" width="100%" class="CALSTABLE">
+                <tbody>
+                  <tr>
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>When selecting a previously unselected
+                      object, the selection cursor lets you know
+                      when you can select something, and this
+                      selection box (green) shows which previously
+                      unselected object will be selected.</p>
+                    </td>
+
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <div class="mediaobject">
+                        <p><img src="images/select1.jpg">
+                        </p>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>Once you have successfully selected an
+                      object, the object will be shown with a red
+                      selection box and a yellow selection box. The
+                      red box is object aligned, while the yellow
+                      box is world aligned. The purpose of the
+                      yellow box is to show which objects are
+                      selected as a group, and will therefore be
+                      affected by any actions you take. The red
+                      boxes are to show which individual objects in
+                      the group selection box are actually part of
+                      the selection. Notice that in the picture on
+                      the right, the leftmost and rightmost
+                      characters are selected, while the middle
+                      character is not.</p>
+                    </td>
+
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <div class="mediaobject">
+                        <p><img src="images/select2.jpg">
+                        </p>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>Once you have successfully selected an
+                      object, the object will selection box will
+                      turn blue if your cursor passes over it.</p>
+
+                      <p>Note: This is not true for
+                      drag-select.</p>
+                    </td>
+
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <div class="mediaobject">
+                        <p><img src="images/select3.jpg">
+                        </p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="section">
+            <h4 class="section"><a name=
+            "missioneditor.tools.basics.devices.handlegrid"></a><a name = "HeaderLink7"></a>The             Handle and Level Grid</h4>
+
+            <div class="table">
+              <a name="AEN237"></a> 
+
+              <p><b>Table 1-7.</b></p>
+
+              <table border="0" width="100%" class="CALSTABLE">
+                <tbody>
+                  <tr>
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <div class="mediaobject">
+                        <p><img src=
+                        "images/selectedhandle.jpg"></p>
+                      </div>
+
+                      <p>Selected Handle</p>
+
+                      <div class="mediaobject">
+                        <p><img src=
+                        "images/unselectedhandle.jpg"></p>
+                      </div>
+
+                      <p>Unselected Handle</p>
+                    </td>
+
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>Every object in the world displays a
+                      handle. The handle has two labels next to
+                      it:</p>
+
+                      <ul>
+                        <li>
+                          <p>A number - signifying which object
+                          this is in the mission object list.</p>
+                        </li>
+
+                        <li>
+                          <p>A name - If the name is (null), no
+                          name has been assigned to this object.
+                          Names are optional, but very useful for
+                          scripting purposes.</p>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <div class="mediaobject">
+                        <p><img src="images/levelgrid.png">
+                        </p>
+                      </div>
+
+                      <p>Level Grid</p>
+                    </td>
+
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>When an object is selected, a faint grid
+                      will appear. The grid is parallel to the
+                      world's X-Y plane and passes through the
+                      selected object at the handle. When multiple
+                      objects are selected, the plane passes
+                      through the group handle which is located at
+                      the axis crossing point for the group
+                      gizmo.</p>
+
+                      <p>This device can be used like a ruler for
+                      placing objects accurately. Unfortunately,
+                      there is no vertical equivalent.</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="section">
+            <h4 class="section"><a name=
+            "missioneditor.tools.basics.devices.scaledevice"></a><a name = "HeaderLink8"></a>            Scale Devices</h4>
+
+            <div class="table">
+              <a name="AEN273"></a> 
+
+              <p><b>Table 1-8.</b></p>
+
+              <table border="0" width="100%" class="CALSTABLE">
+                <tbody>
+                  <tr>
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>You will see this device while editing the
+                      terrain and while adjusting terrain
+                      parameters. The premise of this device is
+                      simple. The 2D scale (line with red dots)
+                      represents parameter in two dimensions.
+                      Depending on the application, the horizontal
+                      spacing may represent elevation, radius, etc.
+                      The vertical spacing may represent opacity,
+                      blending factor, strength of action, etc. The
+                      red dots on the lines are <em>
+                      Control-Points</em>. These points can only be
+                      moved vertically. All scale interfaces come
+                      with a spin box to add or remove control
+                      points, thereby increasing horizontal <em>
+                      resolution</em>.</p>
+
+                      <p>You are better off typing in the value you
+                      want, because the spinner changes do not take
+                      affect unless you edit the textbox.</p>
+                    </td>
+
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <div class="mediaobject">
+                        <p><img src=
+                        "images/scaledevice.png"></p>
+                      </div>
+
+                      <p>The Scale Device</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section"><a name=
+          "missioneditor.tools.basics.machanics"></a><a name = "HeaderLink9"></a>Mission Editor           Mechanics</h3>
+
+          <p>Now that we've familiarized ourselves with the various
+          devices available in the mission editor, lets discuss the
+          mechanics of how we manipulate objects in the mission
+          using the mouse. We'll talk about how to move around the
+          mission, switch camera modes and viewpoints, how to
+          select objects and how to use the mouse to manipulate
+          positions, rotation, and scale via the gizmo.</p>
+
+          <div class="section">
+            <h4 class="section"><a name=
+            "missioneditor.tools.basics.machanics.movement"></a><a name = "HeaderLink10"></a>            Default Movement and Viewpoint</h4>
+
+            <div class="table">
+              <a name="AEN295"></a> 
+
+              <p><b>Table 1-9.</b></p>
+
+              <table border="0" width="100%" class="CALSTABLE">
+                <tbody>
+                  <tr>
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>Moving Around</p>
+                    </td>
+
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>W, A, S, D, SPACE BAR</p>
+
+                      <p>(Up, Left, Down, Right, Jump)</p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>Looking Around</p>
+                    </td>
+
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p><img src=
+                      "images/leftmouseclick.png"></p>
+                      + Mouse Motion<br>
+                       <br>
+                       
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>Zoom</p>
+                    </td>
+
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>E</p>
+
+                      <p>Zooms in when held.</p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>Basic Character Viewpoint</p>
+
+                      <p>(play mode only)</p>
+                    </td>
+
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>TAB</p>
+
+                      <p>Toggles: First Person (1st POV) and Third
+                      Person (3rd POV)</p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>Camera</p>
+                    </td>
+
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>ALT + C</p>
+
+                      <p>Toggles: Current Character POV (1st or
+                      3rd) and Free Camera</p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>Camera Movement Speed</p>
+                    </td>
+
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>SHIFT + 1 - SHIFT + 7</p>
+
+                      <p>(slowest ... fastest)</p>
+
+                      <p>When camera viewpoint is selected, you may
+                      adjust the rate at which the camera moves by
+                      pressing the shift and number keys.</p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>Drop Character at Camera Position</p>
+                    </td>
+
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>F7 (play mode only)</p>
+
+                      <p>ALT + W (mission editor mode only)</p>
+
+                      <p>CTRL + F7 (mission editor mode OR play
+                      mode)</p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>Drop Camera at Character Position</p>
+                    </td>
+
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>ALT + Q (mission editor mode only)</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="section">
+            <h4 class="section"><a name=
+            "missioneditor.tools.basics.machanics.selection"></a><a name = "HeaderLink11"></a>            Object Selection and Translation</h4>
+
+            <div class="table">
+              <a name="AEN352"></a> 
+
+              <p><b>Table 1-10.</b></p>
+
+              <table border="0" width="100%" class="CALSTABLE">
+                <tbody>
+                  <tr>
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>Object (Un)selection</p>
+
+                      <p><img src=
+                      "images/objectselect.jpg"></p>
+
+                      <p><img src=
+                      "images/multiobjectselect.jpg"></p>
+                    </td>
+
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p><img src=
+                      "images/rightmouseclick.png"></p>
+
+                      <p>Selects previously unselected objects.</p>
+
+                      <p>SHIFT +</p>
+
+                      <p><img src=
+                      "images/rightmouseclick.png"></p>
+                      <br>
+                       <br>
+                       
+
+                      <p>Selects previously unselected objects.</p>
+
+                      <p>Unselects previously selected objects.</p>
+
+                      <p><img src=
+                      "images/rightmouseclick.png"></p>
+
+                      <p>(on empty space) + Drag</p>
+
+                      <p>Selects previously unselected objects in
+                      the <em>drag-box</em>. Also, previously
+                      selected objects stay selected. Note:
+                      Drag-box needs to enclose an objects handle
+                      (depicted by red dots to select object.</p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>Object Translation</p>
+
+                      <p>(w/o using Gizmo)</p>
+                    </td>
+
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p><img src=
+                      "images/rightmouseclick.png"></p>
+
+                      <p>+ Drag</p>
+
+                      <p>Translates selected, unselected and
+                      muliple selected objects.</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="section">
+            <h4 class="section"><a name=
+            "missioneditor.tools.basics.machanics.usinggizmo"></a><a name = "HeaderLink12"></a>            Using the Gizmo</h4>
+
+            <p>As described above, the gizmo is the aptly named
+            three-axis device that appears when you select either a
+            single object or a group of objects.</p>
+
+            <p>The gizmo has three individually selectable <em>
+            handles</em> that run along the major axes X, Y, and Z.
+            These handles gives you the ability to translate,
+            rotate, and scale objects.</p>
+
+            <p>Gizmo translations and rotations can be applied to
+            single or multiple selected objects. Rotations are
+            always about the gizmo axis which is the handle for
+            single selected objects and the group-handle for
+            multiple selected objects.</p>
+
+            <p>Gizmo scaling can only be applied to a single
+            selected object.</p>
+
+            <div class="table">
+              <a name="AEN392"></a> 
+
+              <p><b>Table 1-11.</b></p>
+
+              <table border="0" width="100%" class="CALSTABLE">
+                <tbody>
+                  <tr>
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p><img src="images/gizmoselect.jpg">
+                      </p>
+
+                      <p>Single Object Gizmo</p>
+
+                      <p><img src=
+                      "images/multigizmoselect.jpg"></p>
+
+                      <p>Multiple Object Gizmo</p>
+                    </td>
+
+                    <td width="50%" align="LEFT" valign="MIDDLE">
+                      <p>Translation</p>
+
+                      <p><img src=
+                      "images/rightmouseclick.png"></p>
+
+                      <p>(on gizmo axis)</p>
+
+                      <p>Drag left/right for X and Y axis and
+                      up/down for Z axis.</p>
+
+                      <p>World Axis Translation</p>
+
+                      <p>SHIFT +</p>
+
+                      <p><img src=
+                      "images/rightmouseclick.png"></p>
+                      <br>
+                       <br>
+                       
+
+                      <p>(on gizmo axis)</p>
+
+                      <p>Drag left/right for X and Y axis, up/down
+                      for Z axis. Gizmo aligns to world axis and
+                      confines translation along selected world
+                      axis.</p>
+
+                      <p>Rotation</p>
+
+                      <p>ALT +</p>
+
+                      <p><img src=
+                      "images/rightmouseclick.png"></p>
+                      <br>
+                       <br>
+                       
+
+                      <p>(on gizmo axis)</p>
+
+                      <p>Drag left/right</p>
+
+                      <p>Scaling (single object only)</p>
+
+                      <p>CTRL + ALT +</p>
+
+                      <p><img src=
+                      "images/rightmouseclick.png"></p>
+                      <br>
+                       <br>
+                       
+
+                      <p>(on gizmo axis)</p>
+
+                      <p>Drag left to grow and right to shrink</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="section">
+            <h4 class="section"><a name=
+            "missioneditor.tools.basics.machanics.boundingbox"></a><a name = "HeaderLink13"></a>            Scaling using bounding box planes</h4>
+
+            <p>While experimenting, I accidentally discovered that
+            there is another way to scale objects with the mouse.
+            Not only is this method slightly more intuitive, but it
+            doesn't require the use of the gizmo! Try this:</p>
+
+            <div class="procedure">
+              <ol type="1">
+                <li>De-select all objects.</li>
+
+                <li>Find the object you wish to scale and select
+                it.</li>
+
+                <li>Press and Hold: CTRL + ALT</li>
+
+                <li>Click a bounding box plane and drag the mouse
+                to scale. You'll notice that the selected side of
+                the bounding box is filled with a medium blue
+                hash.</li>
+              </ol>
+            </div>
+
+            <p>And, that is all there is to it! Below is an image
+            that shows a selected bounding box face.</p>
+
+            <div class="mediaobject">
+              <p><img src="images/levelgrid.png"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tge/official/content/documentation/Artists/Missions/Tools.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:22:01 GMT -->
+</html>
+

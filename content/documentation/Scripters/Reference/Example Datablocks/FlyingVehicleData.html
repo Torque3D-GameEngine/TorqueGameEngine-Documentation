@@ -1,0 +1,651 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" dir="ltr" lang="en">
+<!-- Mirrored from docs.garagegames.com/tge/official/content/documentation/Scripters/Reference/Example Datablocks/FlyingVehicleData.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:22:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../../index.html";</SCRIPT><link href="../../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 1689;
+   parent.leftFrame.expandToItem('tree2', 'doc1689');
+   var element = parent.leftFrame.document.getElementById('doc1689');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="KEYWORDS" content="TorqueScript/Datablocks/FlyingVehicleData">
+<meta name="robots" content="index,follow">
+<title>TorqueScript/Datablocks/FlyingVehicleData - TDN</title>
+
+
+
+
+
+
+
+
+</head><BODY id = "BODYID" onLoad = "initComponent()" >
+
+
+
+
+
+<div id="main"><div id="main-content">
+
+
+          <h1 class="firstHeading"><a name = "HeaderLink0"></a>TorqueScript/Datablocks/FlyingVehicleData</h1>
+                              <div id="bodyContent">
+            <h3 id="siteSub"><a name = "HeaderLink1"></a>From TDN</h3>
+            <div id="contentSub"></div>
+                                    <!-- start content -->
+                        <a name="FlyingVehicleData"></a><h2><a name = "HeaderLink2"></a>FlyingVehicleData</h2>
+<p>FlyingVehicleData derives from VehicleData and aids the creation of
+flying vehicle objects. FlyingVehicleData defines a few fields beyond
+those described in VehicleData. These new fields are listed in the
+table below.<br><br>
+</p>
+<table summary="FlyingVehicleData Member Fields" border="0" width="100%">
+    <tbody><tr bgcolor="E4E4E4">
+      <th align="left">Field Name</th>
+      <th align="left">Type</th>
+      <th align="left">Default Value</th>
+      <th align="left">Description</th>
+    </tr>
+    <tr bgcolor="F4F4F4">
+      <td colspan="4" align="center"><b>Special Effects Data</b></td>
+    </tr>
+    <tr>
+      <td align="left">jetSound</td>
+      <td align="left">AudioProfilePtr</td>
+      <td align="left">NULL</td>
+      <td align="left">Points
+to the AudioProfile used to produce sounds for the jet. If specified,
+must point to an object of type AudioProfile. Must adhere to the
+semantics associated with AudioProfile*, as defined in the Torque Game
+Engine. </td>
+    </tr>
+    <tr>
+      <td align="left">engineSound</td>
+      <td align="left">AudioProfilePtr</td>
+      <td align="left">NULL</td>
+      <td align="left">Points
+to the AudioProfile used to produce sounds for the engine. If
+specified, must point to an object of type AudioProfile. Must adhere to
+the semantics associated with AudioProfile*, as defined in the Torque
+Game Engine. </td>
+    </tr>
+    <tr>
+      <td align="left">forwardJetEmitter</td>
+      <td align="left">ParticleEmitterDataPtr</td>
+      <td align="left">NULL</td>
+      <td align="left">Points
+to the ParticleEmitterData used in the production of particles for
+forward jet thrust. If specified, must point to an object of type
+AudioProfile. Must adhere to the semantics associated with
+AudioProfile*, as defined in the Torque Game Engine. </td>
+    </tr>
+    <tr>
+      <td align="left">backwardJetEmitter</td>
+      <td align="left">ParticleEmitterDataPtr</td>
+      <td align="left">NULL</td>
+      <td align="left">Points
+to the ParticleEmitterData used in the production of particles for
+Bacjward jet thrust. If specified, must point to an object of type
+AudioProfile. Must adhere to the semantics associated with
+AudioProfile*, as defined in the Torque Game Engine. </td>
+    </tr>
+    <tr>
+      <td align="left">downJetEmitter</td>
+      <td align="left">ParticleEmitterDataPtr</td>
+      <td align="left">NULL</td>
+      <td align="left">Points
+to the ParticleEmitterData used in the production of particles for
+downward jet thurst. If specified, must point to an object of type
+AudioProfile. Must adhere to the semantics associated with
+AudioProfile*, as defined in the Torque Game Engine. </td>
+    </tr>
+    <tr>
+      <td align="left">trailEmitter</td>
+      <td align="left">ParticleEmitterDataPtr</td>
+      <td align="left">NULL</td>
+      <td align="left">Points
+to the ParticleEmitterData used in the production of particles for jet
+trails. If specified, must point to an object of type AudioProfile.
+Must adhere to the semantics associated with AudioProfile*, as defined
+in the Torque Game Engine. </td>
+    </tr>
+</tbody></table>
+<p><br><br>
+</p>
+<table summary="FlyingVehicleData Member Fields" border="0" width="100%">
+    <tbody><tr>
+      <td colspan="4" align="center" bgcolor="#f4f4f4"><b>Physics Data</b></td>
+    </tr>
+    <tr>
+      <td align="left">maneuveringForce</td>
+      <td align="left">Float</td>
+      <td align="left">0.0</td>
+      <td align="left">The
+force generated by movements in the x or y (horizontal) directions.
+Also used to determine the FlyingVehicle's maximum speed, by dividing
+with minDrag (defined in VehicleData). </td>
+    </tr>
+    <tr>
+      <td align="left">horizontalSurfaceForce</td>
+      <td align="left">Float</td>
+      <td align="left">0.0</td>
+      <td align="left">The dampening force of the vehicle's horizontal surfaces (wing) against it's movement force. </td>
+    </tr>
+    <tr>
+      <td align="left">verticalSurfaceForce</td>
+      <td align="left">Float</td>
+      <td align="left">0.0</td>
+      <td align="left">The dampening force of the vehicle's vertical surfaces (fins) against it's movement force. </td>
+    </tr>
+    <tr>
+      <td align="left">rollForce</td>
+      <td align="left">Float</td>
+      <td align="left">1.0</td>
+      <td align="left">The
+dampening force against rolling maneuvers (rotation about the y-axis).
+Affect's the vehicle's rigid body torque and serves to adjust roll to
+the stable position over time. </td>
+    </tr>
+    <tr>
+      <td align="left">steeringForce</td>
+      <td align="left">Float</td>
+      <td align="left">1.0</td>
+      <td align="left">The force generated by the steering jets, affect's the vehicle's rigid body torque. </td>
+    </tr>
+    <tr>
+      <td align="left">steeringRollForce</td>
+      <td align="left">Float</td>
+      <td align="left">1.0</td>
+      <td align="left">The
+roll force generated by steering turns. Plays against rollForce, which
+corrects the effect of steeringRollForce on the vehicle's rigid body
+torque. </td>
+    </tr>
+    <tr>
+      <td align="left">maxAutoSpeed</td>
+      <td align="left">Float</td>
+      <td align="left">0.0</td>
+      <td align="left">The
+threshold speed at which automatic vehicle control assistance stops.
+Vehicles travelling at speeds above this value do not get control
+assitance. </td>
+    </tr>
+    <tr>
+      <td align="left">autoAngularForce</td>
+      <td align="left">Float</td>
+      <td align="left">0.0</td>
+      <td align="left">The
+corrective angular force applied to vehicles. The lower the vehicle's
+speed, the greater the effect of the autoAngularForce. Affect's the
+vehicle's rigid body torque. </td>
+    </tr>
+    <tr>
+      <td align="left">autoLinearForce</td>
+      <td align="left">Float</td>
+      <td align="left">0.0</td>
+      <td align="left">The corrective linear force applied <em>only</em>
+to vehicles travelling below the maxAutoSpeed (autoAngularForce applies
+to vehicles flying at any speed, but its effect increases when below
+the maxAutoSpeed). Affect's the vehicle's rigid body Torque, and has
+the effect of slowing the vehicle down. </td>
+    </tr>
+    <tr>
+      <td align="left">autoInputDamping</td>
+      <td align="left">Float</td>
+      <td align="left">1.0</td>
+      <td align="left">The
+scalar factor by which steering input is dampened when the vehicle is
+travelling at speeds below maxAutoSpeed. autoInputDamping is multiplied
+by the vehicle's steering vector. </td>
+    </tr>
+    <tr>
+      <td align="left">vertThrustMultiple</td>
+      <td align="left">Float</td>
+      <td align="left">1.0</td>
+      <td align="left">The scalar multiple applied to the jetForce (defined in VehicleData) when thrusting vertically. </td>
+    </tr>
+    <tr>
+      <td align="left">rotationalDrag</td>
+      <td align="left">Float</td>
+      <td align="left">0.0</td>
+      <td align="left">The scalar dampening drag against the vehicle's rigid body angular momentum. </td>
+    </tr>
+    <tr>
+      <td align="left">hoverHeight</td>
+      <td align="left">Float</td>
+      <td align="left">2.0</td>
+      <td align="left">The vehicle's height off the ground when at rest. </td>
+    </tr>
+    <tr>
+      <td align="left">createHoverHeight</td>
+      <td align="left">Float</td>
+      <td align="left">2.0</td>
+      <td align="left">The vehicle's height off the ground when it is first created. </td>
+    </tr>
+    <tr>
+      <td align="left">minTrailSpeed</td>
+      <td align="left">Float</td>
+      <td align="left">1.0</td>
+      <td align="left">The minimum speed at which the vehicle must be travelling in order to begin generating a contrail. </td>
+    </tr>
+</tbody></table>
+<p><br><br>
+</p><p>As you can see, FlyingVehicleData defines a number of
+interesting new fields and enables the easy creation of flying vehicles
+with robust physical simulation characteristics.
+</p>
+<a name="Full_Example_Script"></a><h2><a name = "HeaderLink3"></a>Full Example Script</h2>
+<p>Here's a full example - Check all the references to make sure this uses all the commands you need for your game. Particle and 
+Sound Data has not yet been fully added. This script is best for a Fighter plane type vehicle.<br><br>
+</p>
+<pre>//---------------------------------------------------------------------------------------
+// Flying Vehicle Shape File
+//---------------------------------------------------------------------------------------
+// Vehicle Name: Fighter
+// Version: 1.0
+ //---------------------------------------------------------------------------------------
+
+datablock FlyingVehicleData(Fighter)
+{
+    spawnOffset               = "0 0 2";
+    emap                      = true;
+    category                  = "Vehicles";
+    shapeFile                 = "~/data/shapes/vehicles/fighter.dts";
+    multipassenger            = false;
+    computeCRC                = true;
+                	
+    //debrisShapeName         = "~/data/shapes/vehicles/fighter_debris.dts";
+    //debris                  = FighterShapeDebris;
+    //renderWhenDestroyed     = false;
+
+    drag                      = 0.25;
+    density                   = 1.0;
+
+// Mounting Details
+    numMountPoints            = 1; // How many mount points you want.
+    multipassenger = true;  // Depends on # of mountpoints.
+    maxMountSpeed             = 0.1;
+    mountDelay                = 8;
+    dismountDelay             = 1;
+    stationaryThreshold       = 0.5;
+    maxDismountSpeed          = 0.1;
+    mountPose[0] = "Sitting";
+    mountPointTransform[0]    = "0 0 0 0 0 1 0";
+    isProtectedMountPoint[0]  = false;
+    minMountDist			= 2;
+
+    mountPose[0] = sitting; // This is the possition linked to the animation sequence name
+    mountPose[1] = root;
+    mountPose[2] = root;
+    mountPose[3] = root;
+    mountPose[4] = root;
+    mountPose[5] = root;
+    mountPose[6] = root;
+    mountPose[7] = root;
+    mountPose[8] = root;
+// mountPose[9] = gun;
+// mountPose[10] = bomb bay;
+
+// Camera Settings
+    cameraOffset              = 1.5;  // Vertical offset from camera mount point
+	cameraMaxDist           = 16;
+	cameraOffset            = 3.65;
+	cameraLag               = 0.1;
+    cameraRoll                = true; // Roll the camera with the vehicle
+
+// Explosions                 = FighterVehicleExplosion; // Particle Data?
+    explosionDamage           = 10.5;
+    explosionRadius           = 15.0;
+
+    maxDamage                 = 50.40;
+    destroyedLevel            = 50.40;
+
+// Afterburner and any energy weapon pool        			
+    energyPerDamagePoint      = 160;
+    maxEnergy                 = 280;
+    rechargeRate              = 0.8;
+
+    minDrag                   = 40;           // Linear Drag (eventually slows you down when not thrusting...constant drag)
+    rotationalDrag            = 20;        // Anguler Drag (dampens the drift after you stop moving the mouse...also tumble drag)
+
+    maxAutoSpeed	            = 10;       // Autostabilizer kicks in when less than this speed. (meters/second)
+    autoAngularForce          = 400;       // Angular stabilizer force (this force levels you out when autostabilizer kicks in)
+    autoLinearForce           = 300;        // Linear stabilzer force (this slows you down when autostabilizer kicks in)
+    autoInputDamping          = 0.55;      // Dampen control input so you don't` whack out at very slow speeds
+
+// Maneuvering
+    maxSteeringAngle          = 3;    // Max radiens you can rotate the wheel. Smaller number is more maneuverable.
+    horizontalSurfaceForce    = 20;   // Horizontal center "wing" (provides "bite" into the wind for climbing/diving and turning)
+    verticalSurfaceForce      = 20;     // Vertical center "wing" (controls side slip. lower numbers make MORE slide.)
+    maneuveringForce          = 6400;      // Horizontal jets (W,S,D,A key thrust)
+    steeringForce             = 500;         // Steering jets (force applied when you move the mouse)
+    steeringRollForce         = 200;      // Steering jets (how much you heel over when you turn)
+    rollForce        		= 10;  // Auto-roll (self-correction to right you after you roll/invert)
+    hoverHeight        		= 0.5;       // Height off the ground at rest
+    createHoverHeight         = 0.5;  // Height off the ground when created
+    maxForwardSpeed        	= 90;  // speed in which forward thrust force is no longer applied (meters/second)
+
+// Turbo Jet
+    jetForce        		= 3000;      // Afterburner thrust (this is in addition to normal thrust)
+    minJetEnergy        	= 28;     // Afterburner can't be used if below this threshhold.
+    jetEnergyDrain        	= 2.8;       // Energy use of the afterburners (low number is less drain...can be fractional)                                                                                                                                                                                                                                                                                          // Auto stabilize speed
+    vertThrustMultiple        = 3.0;
+
+// Rigid body
+    mass                      = 100;        // Mass of the vehicle
+    integration               = 3;           // Physics integration: TickSec/Rate
+    collisionTol              = 0.6; // Collision distance tolerance
+    contactTol                = 0.4; // Contact velocity tolerance
+
+    bodyFriction              = 0;     // Don't mess with this.
+    bodyRestitution           = 0.8;   // When you hit the ground, how much you rebound. (between 0 and 1)
+    minRollSpeed              = 2000;     // Don't mess with this.
+    softImpactSpeed        	= 3;       // Sound hooks. This is the soft hit.
+    hardImpactSpeed        	= 15;    // Sound hooks. This is the hard hit.
+
+// Ground Impact Damage (uses DamageType::Ground)
+    minImpactSpeed        	= 10;      // If hit ground at speed above this then it's an impact. Meters/second
+    speedDamageScale          = 0.06;
+
+// Object Impact Damage (uses DamageType::Impact)
+    collDamageThresholdVel    = 23.0;
+    collDamageMultiplier      = 0.02;
+
+// Contrails
+    minTrailSpeed        	= 15;      // The speed your contrail shows up at.
+    trailEmitter        	= FighterContrailEmitter;
+    forwardJetEmitter         = FighterFJetEmitter;
+    downJetEmitter        	= FighterDJetEmitter;
+
+//Sounds
+    //jetSound        		= FighterThrustSound;
+    //engineSound        	= FighterEngineSound;
+    //softImpactSound        	= FighterSoftImpactSound;
+    //hardImpactSound        	= FighterHardImpactSound;
+
+    //softSplashSoundVelocity			= 10.0;
+    //mediumSplashSoundVelocity		= 15.0;
+    //hardSplashSoundVelocity			= 20.0;
+    //exitSplashSoundVelocity			= 10.0;
+
+    //exitingWater        	= FighterExitWaterMediumSound;
+    //impactWaterEasy        	= FighterImpactWaterSoftSound;
+    //impactWaterMedium       = FighterImpactWaterMediumSound;
+    //impactWaterHard        	= FighterImpactWaterMediumSound;
+    //waterWakeSound        	= FighterWakeMediumSplashSound;
+
+//  dustEmitter        	      = FighterLiftoffDustEmitter;
+
+    triggerDustHeight         = 4.0;
+    dustHeight        		= 1.0;
+
+//  damageEmitter[0]          = LightDamageSmoke;
+//  damageEmitter[1]          = HeavyDamageSmoke;
+//  damageEmitter[2]          = MediumDamageSmoke;
+
+    damageEmitterOffset[0]	= "0.0 -3.0 0.0 ";
+    damageLevelTolerance[0]	= 0.3;
+    damageLevelTolerance[1]	= 0.7;
+    numDmgEmitterAreas        = 3;
+        		
+// Weapons and Ammo
+    //max[RocketAmmo]        	= 1000;
+
+    //splashEmitter[0]        = VehicleFoamDropletsEmitter;
+    //splashEmitter[1]        = VehicleFoamEmitter;
+
+    //shieldImpact        	= VehicleShieldImpact;
+
+    //cmdCategory        	= "Tactical";
+    //cmdIcon        		= CMDFlyingScoutIcon;
+    //cmdMiniIconName        	= "commander/MiniIcons/com_scout_grey";
+    //targetNameTag        	= 'Fighter';
+    //targetTypeTag        	= 'FlyingVehicle';
+    //sensorData        	= AWACPulseSensor;
+    //sensorRadius        	= AWACPulseSensor.detectRadius;
+    //sensorColor        	= "255 194 9";
+                	
+    checkRadius               = 5.5;
+    observeParameters         = "0 0 1";
+    shieldEffectScale         = "0.937 1.125 0.60";
+};
+
+//----------------------------------------------------------------------------------------
+// Particle Details
+//----------------------------------------------------------------------------------------
+//FighterShapeDebris
+//FighterVehicleExplosion;
+
+//FighterLiftoffDustEmitter;
+
+//LightDamageSmoke;
+//HeavyDamageSmoke;
+//MediumDamageSmoke;
+
+// Contrail
+datablock ParticleData(FighterContrailParticle)
+{
+  dragCoefficient      = 1.5;
+  gravityCoefficient   = 0;
+  inheritedVelFactor   = 0.2;
+  constantAcceleration = 0.0;
+  lifetimeMS           = 3000;
+  lifetimeVarianceMS   = 0;
+  textureName          = "~/data/particles/trailParticle";
+  colors[0]     = "0.6 0.6 0.6 0.5";
+  colors[1]     = "0.2 0.2 0.2 0";
+  sizes[0]      = 0.6;
+  sizes[1]      = 5;
+};
+
+datablock ParticleEmitterData(FighterContrailEmitter)
+{
+  ejectionPeriodMS = 50;
+  periodVarianceMS = 0;
+  ejectionVelocity = 1;
+  velocityVariance = 1.0;
+  ejectionOffset   = 0.0;
+  thetaMin         = 0;
+  thetaMax         = 180;
+  phiReferenceVel  = 0;
+  phiVariance      = 360;
+  overrideAdvances = false;
+  particles = "FighterContrailParticle";
+};
+
+// forward
+datablock ParticleData(FighterFJetParticle)
+{
+  dragCoefficient      = 1.5;
+  gravityCoefficient   = 0;
+  inheritedVelFactor   = 0.2;
+  constantAcceleration = 0.0;
+  lifetimeMS           = 3000;
+  lifetimeVarianceMS   = 0;
+  textureName          = "~/data/particles/forwardParticle";
+  colors[0]     = "0.6 0.6 0.6 0.5";
+  colors[1]     = "0.2 0.2 0.2 0";
+  sizes[0]      = 0.6;
+  sizes[1]      = 5;
+};
+
+datablock ParticleEmitterData(FighterFJetEmitter)
+{
+  ejectionPeriodMS = 50;
+  periodVarianceMS = 0;
+  ejectionVelocity = 1;
+  velocityVariance = 1.0;
+  ejectionOffset   = 0.0;
+  thetaMin         = 0;
+  thetaMax         = 180;
+  phiReferenceVel  = 0;
+  phiVariance      = 360;
+  overrideAdvances = false;
+  particles = "FighterFJetParticle";
+};
+
+// Backward
+datablock ParticleData(FighterBackParticle)
+{
+  dragCoefficient      = 1.5;
+  gravityCoefficient   = 0;
+  inheritedVelFactor   = 0.2;
+  constantAcceleration = 0.0;
+  lifetimeMS           = 3000;
+  lifetimeVarianceMS   = 0;
+  textureName          = "~/data/particles/backwardParticle";
+  colors[0]     = "0.6 0.6 0.6 0.5";
+  colors[1]     = "0.2 0.2 0.2 0";
+  sizes[0]      = 0.6;
+  sizes[1]      = 5;
+};
+
+datablock ParticleEmitterData(FighterBackEmitter)
+{
+  ejectionPeriodMS = 50;
+  periodVarianceMS = 0;
+  ejectionVelocity = 1;
+  velocityVariance = 1.0;
+  ejectionOffset   = 0.0;
+  thetaMin         = 0;
+  thetaMax         = 180;
+  phiReferenceVel  = 0;
+  phiVariance      = 360;
+  overrideAdvances = false;
+  particles = "FighterBackParticle";
+};
+
+//Upwards
+datablock ParticleData(FighterUJetParticle)
+{
+  dragCoefficient      = 1.5;
+  gravityCoefficient   = 0;
+  inheritedVelFactor   = 0.2;
+  constantAcceleration = 0.0;
+  lifetimeMS           = 3000;
+  lifetimeVarianceMS   = 0;
+  textureName          = "~/data/particles/upParticle";
+  colors[0]     = "0.6 0.6 0.6 0.5";
+  colors[1]     = "0.2 0.2 0.2 0";
+  sizes[0]      = 0.6;
+  sizes[1]      = 5;
+};
+
+datablock ParticleEmitterData(FighterUJetEmitter)
+{
+  ejectionPeriodMS = 50;
+  periodVarianceMS = 0;
+  ejectionVelocity = 1;
+  velocityVariance = 1.0;
+  ejectionOffset   = 0.0;
+  thetaMin         = 0;
+  thetaMax         = 180;
+  phiReferenceVel  = 0;
+  phiVariance      = 360;
+  overrideAdvances = false;
+  particles = "FighterUJetParticle";
+};
+
+//Downward
+datablock ParticleData(FighterDJetParticle)
+{
+  dragCoefficient      = 1.5;
+  gravityCoefficient   = 0;
+  inheritedVelFactor   = 0.2;
+  constantAcceleration = 0.0;
+  lifetimeMS           = 3000;
+  lifetimeVarianceMS   = 0;
+  textureName          = "~/data/particles/downParticle";
+  colors[0]     = "0.6 0.6 0.6 0.5";
+  colors[1]     = "0.2 0.2 0.2 0";
+  sizes[0]      = 0.6;
+  sizes[1]      = 5;
+};
+
+datablock ParticleEmitterData(FighterDJetEmitter)
+{
+  ejectionPeriodMS = 50;
+  periodVarianceMS = 0;
+  ejectionVelocity = 1;
+  velocityVariance = 1.0;
+  ejectionOffset   = 0.0;
+  thetaMin         = 0;
+  thetaMax         = 180;
+  phiReferenceVel  = 0;
+  phiVariance      = 360;
+  overrideAdvances = false;
+  particles = "FighterDJetParticle";
+};
+
+
+
+//----------------------------------------------------------------------------------------
+// Sound Details
+//----------------------------------------------------------------------------------------
+
+FighterThrustSound;
+FighterEngineSound;
+FighterSoftImpactSound;
+FighterHardImpactSound;
+
+FighterExitWaterMediumSound;
+FighterImpactWaterSoftSound;
+FighterImpactWaterMediumSound;
+FighterImpactWaterMediumSound;
+FighterWakeMediumSplashSound;
+
+//----------------------------------------------------------------------------------------
+// Game Functions
+//----------------------------------------------------------------------------------------
+
+function Flyer::onDamage(%this, %obj, %delta)
+{
+    Parent::onDamage(%this, %obj);
+    %currentDamage = %obj.getDamageLevel();
+    if(%currentDamage &gt; %obj.destroyedLevel)
+    {
+        if(%obj.getDamageState()&nbsp;!$= "Destroyed")
+        {
+        if(%obj.respawnTime&nbsp;!$= "")
+        %obj.marker.schedule = %obj.marker.data.schedule(%obj.respawnTime, "respawn", %obj.marker); 
+        %obj.setDamageState(Destroyed);
+        }
+    }
+    else
+    {
+        if(%obj.getDamageState()&nbsp;!$= "Enabled")
+        %obj.setDamageState(Enabled);
+    }
+}
+</pre>
+
+<!-- Saved in parser cache with key tdnmw:pcache:idhash:1839-0!1!0!0!!en!2 and timestamp 20070418224553 -->
+
+
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+<!-- Mirrored from docs.garagegames.com/tge/official/content/documentation/Scripters/Reference/Example Datablocks/FlyingVehicleData.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:22:50 GMT -->
+</html>

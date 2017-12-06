@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+  
+<!-- Mirrored from docs.garagegames.com/tge/official/content/documentation/Engine/Mac.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:22:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../index.html";</SCRIPT><link href="../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 16;
+   parent.leftFrame.expandToItem('tree2', 'doc16');
+   var element = parent.leftFrame.document.getElementById('doc16');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+	<link rel="stylesheet" type="text/css"  href="images/gemdoc.css" title="gemdoc_auto_stylesheet">
+
+    <title>Setting up the Torque SDK on Mac OSX</title>
+    <meta name="GENERATOR" content=
+    "Modular DocBook HTML Stylesheet Version 1.7">
+    <link rel="HOME" title="Setting Up the Torque Game Engine"
+    href="index.html">
+    <link rel="PREVIOUS" title="Setting up Torque on Windows" href=
+    "setupengine.win.html">
+    <link rel="NEXT" title="Setting up the Torque SDK on Linux"
+    href="setupengine.linux.html">
+  
+
+<meta name="Generator" content="GemDoc"/>
+
+</head>
+
+  <BODY id = "BODYID" onLoad = "initComponent()"  class="section" bgcolor="#FFFFFF" text="#000000" link=
+  "#0000FF" vlink="#840084" alink="#0000FF">
+
+    <div class="section">
+      <h8 class="titleText"><a name="setupengine.mac"></a><a name = ""></a>Setting up       the Torque SDK on Mac OSX</h1>
+
+      <div class="section">
+        <h2 class="section"><a name=
+        "setupengine.mac.preparesystem"></a><a name = "HeaderLink1"></a>Preparing Your         System</h2>
+
+        <p>You don't have to do much to get your system ready to
+        work with Torque. On OS X, simply ensure you meet the
+        system requirements listed below:</p>
+
+        <div class="section">
+          <h3 class="section"><a name=
+          "setupengine.mac.preparesystem.requirements"></a><a name = "HeaderLink2"></a>System           Requirements</h3>
+
+          <p>Required Hardware:</p>
+
+          <ul>
+            <li>
+              <p>G3+</p>
+            </li>
+
+            <li>
+              <p>64MB RAM or more, highly dependent on your
+              application</p>
+            </li>
+
+            <li>
+              <p>3D Hardware accelerated video card such as AGP
+              Radeon or GeForce class cards.</p>
+            </li>
+          </ul>
+          <br>
+          <br>
+           
+
+          <p>Required Software:</p>
+
+          <ul>
+            <li>
+              <p>MacOS 10.2.x, or 10.3.x (latest update)</p>
+            </li>
+
+            <li>
+              <p>Latest drivers for Video board</p>
+            </li>
+
+            <li>
+              <p>TCP/IP properly configured</p>
+            </li>
+
+            <li>
+              <p><a href="http://www.openal.org/" target=
+              "_top">OpenAL</a> Runtime or SDK Installation</p>
+            </li>
+          </ul>
+          <br>
+          <br>
+           
+
+          <p>Development Tools:</p>
+
+          <ul>
+            <li>
+              <p>Apple's XCode compiler, latest version. XCode
+              comes with Mac OSX 10.x, and can be updated on
+              Apple's developer site.</p>
+            </li>
+
+            <li>
+              <p>It is also recommended that you download some
+              tools like <a href="http://www.jedit.org/" target=
+              "_top">JEdit</a> (and the JEdit <a href=
+              "http://torqueide.sourceforge.net/" target="_top">
+              TorqueIDE</a>.</p>
+            </li>
+          </ul>
+          <br>
+          <br>
+        </div>
+
+        <div class="section">
+          <h3 class="section"><a name=
+          "setupengine.mac.preparesystem.summary"></a><a name = "HeaderLink3"></a>Summary</h3>
+
+          <p>There you have it, nothing too heavy-duty. Please
+          note, however, though the engine itself has fairly
+          minimal requirements as far as hardware, the performance
+          of any particular game built using the TGE will depend
+          greatly on how each game makes use of the resources
+          available to it. TGE games can vary from very low-demand
+          applications such as small 2D game "toys" to high end
+          (and high framerate) 3D Role Playing Games, First Person
+          Shooters, Racers, Flight Simulators, and whatever you can
+          dream up! Torque is a high-performance engine, it is up
+          to you how far your own code and content will stress a
+          user's systems.</p>
+
+          <p>Now that you've downloaded the SDK source-code, and
+          your system is ready to work, read on to learn the simple
+          procedure required to get the SDK compiled using
+          XCode.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section"><a name=
+        "setupengine.mac.compile_xcode"></a><span
+        class="productname"></span><a name = "HeaderLink4"></a>Compiling the Torque Game Engine SDK with         XCode on OS X</h2>
+
+        <p>Xcode is Apple's free development environment that ships
+        with Mac OS X 10.3 and higher. Previous revisions of
+        Apple's development environment were called Project
+        Builder. The Torque project file should work with either of
+        these versions, but GarageGames only officially supports
+        development on XCode.</p>
+
+        <div class="section">
+          <h3 class="section"><a name=
+          "setupengine.mac.compile_xcode.setup"></a><a name = "HeaderLink5"></a>Xcode           Setup</h3>
+
+          <p>Make sure that Xcode is installed and up to date. It
+          can be installed from the <em>Xcode Developer Tools
+          CD</em> that ships with Mac OS X 10.3. Once installed, it
+          can be updated on Apple's developer site.</p>
+
+          <p>Installation instructions can be found in the document
+          <em>About Xcode Tools.pdf</em>, also located on the <em>
+          Xcode Developer Tools CD</em>.</p>
+
+          <div class="procedure">
+            <p><b>Opening the Torque Project File in Xcode</b></p>
+
+            <ol type="1">
+              <li>
+                <p>Navigate to the directory where you downloaded
+                Torque.</p>
+              </li>
+
+              <li>
+                <p>Inside this directory, you will see another
+                directory called <em>pb</em> (an abbreviation for
+                Project Builder, the predecessor to Xcode). Open
+                this directory.</p>
+              </li>
+
+              <li>
+                <p>Open the package called <em>
+                torque_pb_2_1.pbproj</em> by double-clicking
+                it.</p>
+
+                <div class="note">
+                  <table class="note" width="100%" border="0">
+                    <tr>
+                      <td width="25" align="CENTER" valign="TOP">
+                      <img src="images/note.gif" hspace="5" alt=
+                      "Note"></td>
+
+                      <td align="LEFT" valign="TOP">
+                        <p>The first time you open
+                        torque_pb_2_1.pbproj, you may see a warning
+                        that it was created for an older version of
+                        Xcode. Click OK.</p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <p>It is advisable to specify the <em>example</em>
+          directory as Torque's build location. The Torque
+          executable must be in the same folder as the main.cs file
+          and other script assets.</p>
+
+          <div class="procedure">
+            <p><b>Setting Build Location</b></p>
+
+            <ol type="1">
+              <li>
+                <p>Open the <em>Xcode-&gt;Preferences...</em>
+                window.</p>
+              </li>
+
+              <li>
+                <p>Select the <em>Building</em> icon from the
+                sections at the top of the window.</p>
+              </li>
+
+              <li>
+                <p>Change the first radio button selection to <em>
+                Separate location for build products</em>.</p>
+              </li>
+
+              <li>
+                <p>type in <em>../example</em>. This will tell
+                XCode to place build products in the example
+                directory, relative to whatever base directory you
+                are working from.</p>
+              </li>
+            </ol>
+          </div>
+
+          <p>Now when Torque builds, it will be placed immediately
+          into the correct directory. This will let you run debug
+          mode in Xcode, and prevent you from having to copy your
+          executables from the default build location.</p>
+        </div>
+
+        <div class="section">
+          <h3 class="section"><a name=
+          "setupengine.mac.compile_xcode.compile"></a><a name = "HeaderLink6"></a>Xcode           Compiling</h3>
+
+          <p>Now that you have the Torque Project file open, it is
+          simply a matter of pressing the <em>Build Active
+          Target</em> button to begin compiling Torque.</p>
+
+          <div class="note">
+            <table class="note" width="100%" border="0">
+              <tr>
+                <td width="25" align="CENTER" valign="TOP"><img
+                src="images/note.gif" hspace="5" alt="Note"></td>
+
+                <td align="LEFT" valign="TOP">
+                  <p>You may encounter a linking error referring to
+                  OpenAL or Ogg Vorbis files. If this error occurs,
+                  please make sure you have the latest OpenAL
+                  drivers for Mac from <a href=
+                  "http://www.openal.org/" target="_top">
+                  www.openal.org</a></p>
+
+                  <p>If you still encounter errors while compiling,
+                  try following the instructions in this <a href=
+                  "http://www.garagegames.com/index.php?sec=mg&amp;mod=resource&amp;page=view&amp;qid=5003"
+                   target="_top">Mac TGE FAQ</a>.</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section"><a name=
+          "setupengine.mac.compile_xcode.done"></a><a name = "HeaderLink7"></a>All Done!</h3>
+
+          <p>Congratulations! You've successfully built the Torque
+          Game Engine SDK. If you'd like to run the demo
+          application, it will have been output as <em>
+          ../example/Torque Demo OSX</em>, or <em>../example/Torque
+          Demo Debug OSX</em>, depending on which build project was
+          selected in XCode. Now, read the <a href=
+          "setupengine.demoapp.html">Torque Demo Application
+          section</a> to learn how to use it!</p>
+        </div>
+      </div>
+    </div>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tge/official/content/documentation/Engine/Mac.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:22:20 GMT -->
+</html>
+

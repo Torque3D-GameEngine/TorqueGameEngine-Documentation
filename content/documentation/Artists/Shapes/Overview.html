@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" dir="ltr" lang="en">
+<!-- Mirrored from docs.garagegames.com/tge/official/content/documentation/Artists/Shapes/Overview.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:22:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 12;
+   parent.leftFrame.expandToItem('tree2', 'doc12');
+   var element = parent.leftFrame.document.getElementById('doc12');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="KEYWORDS" content="DTS/Overview,DTS,TGE,Template:ContentStandard">
+<meta name="robots" content="index,follow">
+<title>Shapes Overview</title>
+
+
+
+
+
+
+
+
+</head><BODY id = "BODYID" onLoad = "initComponent()" >
+
+<!-- start content -->
+<table style="text-align: justify;" border="0" cellpadding="0" cellspacing="0" width="700">
+<tbody><tr>
+
+<td width="700">
+<a name="Introduction"></a><h2><a name = "HeaderLink0"></a>Introduction</h2>
+<div class="thumb tright"><div style="width: 102px;"><img src="images/Orc01.jpg" Good ol classic orc."></a></div>Good ol classic orc.</div></div></div>
+<p>DTS (Dynamix Three Space) is the file format Torque uses for
+detailed 3d objects. Everything from interactive shapes like
+characters, vehicles, and weapons to static environment art like
+foliage and rocks will be brought into your game as a DTS.<br><br>
+</p>
+
+<a name="Basic_DTS_Hierarchy"></a><h2><a name = "HeaderLink1"></a>Basic DTS Hierarchy</h2><br>
+<p>No matter the complexity, a dts shape will always be structured the
+same way. A series of nodes and meshes, the basic hierarchy looks like
+the image shown.
+</p>
+<div class="thumb tright"><div style="width: 517px;"><a href="http://tdn.garagegames.com/wiki/Image:3dsmax_DTSHierarchy.gif&amp;needLogin=1" class="internal" title="This image shows the hierarchy from within 3DSMax, other modeling programs will have similar setups."><img src="images/3dsmax_DTSHierarchy.gif" alt="This image shows the hierarchy from within 3DSMax, other modeling programs will have similar setups." longdesc="../../../../../../wiki/Image_3dsmax_DTSHierarchy.html" height="130" width="515"></a>  <div class="thumbcaption">This image shows the hierarchy from within 3DSMax, other modeling programs will have similar setups.</div></div></div><br><br>
+<p>First is a base node, which simply acts as the beginning of the
+chain. Under base is the start, detail, and collision markers. These
+all perform different tasks.<br><br>
+The detail markers alert the engine to the number of level of detail
+(LOD) meshes the shape has while the collision markers alert the engine
+to the existance of a collision mesh. The start node is the parent of
+any meshes (both detail and collision) you have in your scene.<br><br>
+</p><p>The process for building this hierarchy varies from application
+to application, so don't worry if you have no idea how to set it up (or
+even if you didn't understand a word of that last paragraph); you'll be
+made a pro in the following tutorials.<br><br>
+</p><p>Besides the base, start, detail, and collision nodes, there are
+other nodes which perform different functions. Mount nodes are used to
+attach one dts to another. There are nodes which define the location of
+the muzzle as well as the shell ejection point for weapons. There are
+vehicle specific nodes, as well, which perform a number of functions.
+For instance, there is a node which identifes the tips of a flying
+vehicle's wings for jet contrails is a great example of this.<br><br>
+</p>
+
+<a name="Getting_Your_Art_Into_Torque"></a><h2><a name = "HeaderLink2"></a>Getting Your Art Into Torque</h2><br>
+<p>The Torque art pipeline can best be illustrated with a simple list:<br><br>
+</p><p>1. Model and texture your shape<br>
+2. Check your work in your 3D modeling app<br>
+3. Configure the exporter for the shape and export<br>
+4. Check your work in <a href="http://www.garagegames.com/products/59/" class="external text" title="http://www.garagegames.com/products/59/" rel="nofollow">ShowToolPro</a><br>
+5. Write any necessary scripts<br>
+6. Check your work again in ShowToolPro<br>
+7. Load into the engine via the mission editor<br>
+8. Check your work in the developers console<br><br>
+</p><p>Take special notice of steps 2, 4, 6, and 8. You should be
+checking your work whenever you do something major. This is because
+most errors you'll recieve are simple ones that are easy to fix if you
+dont build on top of them. Getting into the habit of making sure things
+are perfect as you work will stop you from ending up with a compound
+problem down the line. <br><br>
+</p><p>Over the course of these tutorials you'll be instructed on what you need to look for in order to ensure a flawless DTS.<br><br>
+</p>
+
+<a name="Animation"></a><h2><a name = "HeaderLink3"></a>Animation</h2><br>
+<p>Animation can be exported within the DTS shape or as a separate
+animation file known as a DSQ. DSQs are typically used for things like
+characters, while simpler shapes have the animation exported within the
+DTS. The advantage to exporting character animation as a DSQ is that
+the sequences can be used by more than one model provided they were
+rigged with the same skeleton. Needless to say, creating one set of
+animations that each character in your game will use can save weeks of
+developement time, which is why its such a good practice.<br><br>
+</p><p>Simple animations (like the spinning of a radar dish) or
+animations associated with vehicles or weapons can be exported with the
+DTS, since those sequences are very unique and can only be used by the
+shapes they were created for.<br><br>
+</p>
+
+<a name="Moving_On"></a><h2><a name = "HeaderLink4"></a>Moving On</h2><br>
+<p>The DTS format is exceptionally versatile. If you can imagine it and
+have the ability to build it, you can get it into your Torque game.
+Over the course of the official DTS lessons, you'll learn how to do
+everything from simple shapes to complex characters and vehicles.<br><br>
+</p>
+
+<a name="Creating_Shapes"></a><h2><a name = "HeaderLink5"></a>Creating Shapes</h2><br>
+<p>There are a variety of 3d modelling packages that can be used to create
+DTS shapes. Use the Table of Contents to see more documentation that is
+relevant to each tool.<br><br>
+</p>
+
+<p><a href="http://www.autodesk.com/3dsmax" class="external text" title="http://www.autodesk.com/3dsmax" rel="nofollow">3D Studio Max</a>
+- Autodesk 3ds Max 8 software provides new asset management,
+character development, UV mapping, and scripting tools designed to
+maximize your productivity.
+</p><p><a href="http://www.blender3d.org/" class="external text" title="http://www.blender3d.org" rel="nofollow">Blender 3D</a>
+- Steep learning curve, but it is much more robust than many other
+commercial modeling programs. Has an aditional benefit of being free
+and open-source software.
+</p><p><a href="http://www.maxon.net/" class="external text" title="http://www.maxon.net" rel="nofollow">Cinema 4D</a>
+- Maxon's CINEMA 4D provides ease of use and legendary stability for
+modelling and animation (although no exporter exists for either DTS or
+DIF). Also from Maxon is Body Paint which offers hassle-free texturing
+that lets you quickly paint highly detailed textures directly on your
+3D objects.
+</p><p><a href="http://www.newtek.com/lightwave/" class="external text" title="http://www.newtek.com/lightwave/" rel="nofollow">Lightwave</a>
+- LightWave 3D has a long history and brand name in the computer
+graphics industry. It has a great polygonal modeler, also excellent UV
+tools, which is very important for real-time graphics.
+</p><p><a href="http://usa.autodesk.com/adsk/servlet/index?id=6871843&amp;siteID=123112" class="external text" title="http://usa.autodesk.com/adsk/servlet/index?id=6871843&amp;siteID=123112" rel="nofollow">Maya</a> - AutoDesk Maya software is the world's most powerfully integrated 3D modeling, animation, effects and rendering solution.
+</p><p><a href="http://www.milkshape3d.com/" class="external text" title="http://www.milkshape3d.com" rel="nofollow">Milkshape 3D</a>
+- MilkShape 3D is a low-polygon modeler, which was initially designed
+for Half-Life. During the development, many file formats have been
+added. The <a href="http://www.davedigitalworks.com/resources/apps/ms2dtsExporterPlus.zip" class="external text" title="http://www.davedigitalworks.com/resources/apps/ms2dtsExporterPlus.zip" rel="nofollow">DTS Plus</a> Exporter should be added as the default DTS Exporter lacks the same amount of functionality.
+</p><p><a href="http://softimage.com/products/xsi/default.aspx" class="external text" title="http://softimage.com/products/xsi/default.aspx" rel="nofollow">SOFTIMAGE|XSI</a>
+- Steep learning curve, very full featured, and widely used in the game
+industry. Focused on character development. Powerful animation system,
+game development centric asset management integration (<a href="http://www.alienbrain.com/" class="external text" title="http://www.alienbrain.com" rel="nofollow">Alienbrain</a>), facial expressions system (via <a href="http://softimage.com/products/face_robot/default.aspx" class="external text" title="http://softimage.com/products/face robot/default.aspx" rel="nofollow">SOFTIMAGE|FACE ROBOT</a>). Excellent subdivision surface modelling tools.
+</p>
+</td>
+
+</tr>
+
+</tbody></table>
+
+
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+<!-- Mirrored from docs.garagegames.com/tge/official/content/documentation/Artists/Shapes/Overview.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:22:18 GMT -->
+</html>

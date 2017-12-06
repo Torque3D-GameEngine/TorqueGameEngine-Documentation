@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+  
+<!-- Mirrored from docs.garagegames.com/tge/official/content/documentation/Artists/Missions/Creator.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:22:08 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 6;
+   parent.leftFrame.expandToItem('tree2', 'doc6');
+   var element = parent.leftFrame.document.getElementById('doc6');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+	<link rel="stylesheet" type="text/css"  href="images/gemdoc.css" title="gemdoc_auto_stylesheet">
+
+    <title>World Editor Creator (Creator)</title>
+    <meta name="GENERATOR" content=
+    "Modular DocBook HTML Stylesheet Version 1.7">
+    <link rel="HOME" title="Mission Editor Introduction" href=
+    "index.html">
+    <link rel="PREVIOUS" title="World Editor (Inspector)" href=
+    "missioneditor.inspector.html">
+    <link rel="NEXT" title="Mission Area Editor (Area Editor)"
+    href="missioneditor.area.html">
+  
+
+<meta name="Generator" content="GemDoc"/>
+
+</head>
+
+  <BODY id = "BODYID" onLoad = "initComponent()"  class="section" bgcolor="#FFFFFF" text="#000000" link=
+  "#0000FF" vlink="#840084" alink="#0000FF">
+
+    <div class="section">
+      <h8 class="titleText"><a name="missioneditor.creator"></a><a name = ""></a>World       Editor Creator (Creator)</h1>
+
+      <p>Starting World Editor Creator</p>
+
+      <div class="procedure">
+        <ol type="1">
+          <li>Start the Mission Editor by pressing F11.</li>
+
+          <li>Start the Manipulator by pressing F4.</li>
+        </ol>
+      </div>
+
+      <div class="section">
+        <h2 class="section"><a name="missioneditor.creator.window"></a><a name = "HeaderLink1"></a>        World Editor Creator Window</h2>
+
+        <p>This tool is used to create (or place) new content. From
+        the World Editor Creator we can select objects to insert
+        into our current mission.</p>
+
+        <p>The top-level folders are:</p>
+
+        <ul>
+          <li>
+            <p>Interior - Buildings and other interiors.</p>
+          </li>
+
+          <li>
+            <p>Shapes - Animatable shapes.</p>
+          </li>
+
+          <li>
+            <p>Static Shapes - Lightweight inanimate shapes.</p>
+          </li>
+
+          <li>
+            <p>Mission Objects -</p>
+
+            <ul>
+              <li>
+                <p>Environmental stuff like the sky, sun,
+                water.</p>
+              </li>
+
+              <li>
+                <p>Mission stuff like MissionArea, Triggers, and
+                Cameras.</p>
+              </li>
+
+              <li>
+                <p>System stuff like SimGroups.</p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2 class="section"><a name=
+        "missioneditor.creator.newobjects"></a><a name = "HeaderLink2"></a>Placing (Creating)         New Objects</h2>
+
+        <p>Creating new objects is very like pasting objects.
+        Simply,</p>
+
+        <div class="procedure">
+          <ol type="1">
+            <li>Move to the location in the mission area where you
+            would like to place the object.</li>
+
+            <li>Look approximately where you want to place the
+            object (there is no pre-placement positioning feedback
+            unfortunately - i.e. X does not mark the spot.).</li>
+
+            <li>Find the object you wish to place by looking in the
+            World Editor Creator Tree.</li>
+
+            <li>Click once on the object in the list.</li>
+          </ol>
+        </div>
+
+        <p>Once an object is placed in the world, you can freely
+        manipulate its position, rotation, and scale via the mouse.
+        If, however, you want to change object parameters, you'll
+        need to switch back to the Inspector.</p>
+      </div>
+
+      <div class="section">
+        <h2 class="section"><a name="missioneditor.creator.tips"></a><a name = "HeaderLink3"></a>        Creator Tips</h2>
+
+        <p>There will be a FAQ later in the appendix that deals
+        with common stumbling blocks, but I'm going to list a few
+        issues here because they are so very common, and this is a
+        natural place to discuss them.</p>
+
+        <p><em>Q</em>: "I placed an INTERIOR and the textures did
+        not show up. Why?"</p>
+
+        <p><em>A</em>: Unlike SHAPES, the INTERIORS do not
+        immediately display their textures when inserted into the
+        world. They have to be processed by the lighting stage
+        (remember the message <em>Lighting Mission</em> when
+        starting the mission?). Once you have placed an INTERIOR,
+        press ALT + L to re-light the scene. This may take a few
+        seconds, depending on the complexity/size/density of the
+        mission.</p>
+
+        <p><em>Q</em>: "How can I accurately place my objects the
+        first time?"</p>
+
+        <p><em>A</em>: Initial object placement is determined by
+        line of sight. There are three basic placement cases. In
+        the first two cases, a ray is cast from the eye of the
+        camera/player until it hits the bounding box of another
+        Mission Object or the Terrain/Water. In either of these
+        cases, the object is placed at the point of collision. The
+        third case is when the eye of the camera/player is aimed at
+        the sky. In this case, the ray-cast fails (no-collision)
+        and the object is placed at root of the ray (i.e. where you
+        are looking from). Regarding bounding box collisions. I
+        wouldn't count on those always working. I've had many cases
+        where the ray collided with the ground instead of the
+        intended target in front of the ground. Just get used to
+        the idea that you will have to finesse things into the
+        right location after placing them.</p>
+      </div>
+
+      <div class="section">
+        <h2 class="section"><a name=
+        "missioneditor.creator.creatortree"></a><a name = "HeaderLink4"></a>Adding Object to         Creator Tree</h2>
+
+        <p>If you have been exploring the <em>example/fps</em>
+        directory, you may have noticed a similarity between the
+        layout of the directories and the Creator's hierarchy. That
+        is because there is a dependency (mostly for interiors). A
+        more thorough discussion of this will be given in Tech
+        School.</p>
+
+        <div class="table">
+          <a name="AEN1019"></a> 
+
+          <p><b>Table 1-21.</b></p>
+
+          <table border="0" class="CALSTABLE">
+            <tbody>
+              <tr>
+                <td width="50%" align="LEFT" valign="MIDDLE">
+                  <p><img src="images/creatortree.png"></p>
+                </td>
+
+                <td width="50%" align="LEFT" valign="MIDDLE">
+                  <p><img src="images/explorer.png"></p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="50%" align="LEFT" valign="MIDDLE">World
+                Editor Creator</td>
+
+                <td width="50%" align="LEFT" valign="MIDDLE">vs.
+                Windows Explorer</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Although a complete discussion on adding new interiors
+        and shapes is beyond the scope of this section of the
+        guide, I will outline the most basic steps required to get
+        new INTERIORS and SHAPES into the Creator Tree.</p>
+      </div>
+
+      <div class="section">
+        <h2 class="section"><a name=
+        "missioneditor.creator.addinteriors"></a><a name = "HeaderLink5"></a>Adding Interiors         To Creator Tree</h2>
+
+        <p>Torque needs the following files to create an
+        Interior:</p>
+
+        <ul>
+          <li>
+            <p>DIF - Once an interior has been properly generated,
+            there will be a file named interior_name.dif, where
+            interior_name is whatever you chose to name your
+            interior object.</p>
+          </li>
+
+          <li>
+            <p>Graphic File(s) - A non-transparent interior will
+            have at least one graphic file. By default, the graphic
+            files used for the interior need to be located in a
+            directory above the interior's DIF file or in the same
+            directory as the DIF file.</p>
+          </li>
+        </ul>
+
+        <p>Example:</p>
+
+        <div class="procedure">
+          <ol type="1">
+            <li>In the directory: <em>
+            example\egt\data\interiors\abcshack</em>you will find a
+            file named abcshack.dif. Make a copy of this file and
+            rename it: myabcshack.dif.</li>
+
+            <li>Completely exit the SDK, re-load it, and start the
+            Mission Editor mission again.</li>
+
+            <li>Now, in the Creator Tree, under <em>Interiors -&gt;
+            egt -&gt; data -&gt; Interiors -&gt; abcshack</em>you
+            will see a new Interior named: <em>myabcshack</em>. Try
+            placing it.</li>
+          </ol>
+        </div>
+
+        <div class="mediaobject">
+          <p><img src="images/creatortreeinterior.png"></p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section"><a name=
+        "missioneditor.creator.addshape"></a><a name = "HeaderLink6"></a>Adding Shapes To         Creator Tree</h2>
+
+        <p>Torque needs the following files to create a Shape:</p>
+
+        <ul>
+          <li>
+            <p>DTS - Once a shape has been properly generated,
+            there will be a file named shape_name.dts, where
+            shape_name is the whatever you chose to name your shape
+            object.</p>
+          </li>
+
+          <li>
+            <p>Graphic File(s) - A non-transparent shape will have
+            at least one graphic file. By default, the graphic
+            files used for the shape need to be located in the same
+            directory as the shape's DTS file.</p>
+          </li>
+
+          <li>
+            <p>DSQ(s) (optional) - For an animated shape created in
+            Max (does not apply to shapes created with Milkshape),
+            there is a third type of file, containing animation
+            data. For simplicity sake, this will not be discussed
+            here, other than to note that they may exist. By
+            default, the DSQ file(s) used for the shape need to be
+            located in the same directory as the shape's DTS
+            file.</p>
+          </li>
+        </ul>
+
+        <p>Example:</p>
+
+        <div class="procedure">
+          <ol type="1">
+            <li>In the directory: <em>
+            example\egt\data\shapes\Simple</em>you will find a file
+            named cube.dts. Make a copy of this file and rename it:
+            mycube.dts.</li>
+
+            <li>Completely exit the SDK, re-load it, and start the
+            Mission Editor mission again.</li>
+
+            <li>Now, in the Creator Tree, under <em>Static Shapes
+            -&gt; egt -&gt; data -&gt; Shapes -&gt; Simple</em>you
+            will see a new Shape named: <em>mycube</em>. Try
+            placing it.</li>
+          </ol>
+        </div>
+
+        <div class="mediaobject">
+          <p><img src="images/creatortreeshape.png"></p>
+        </div>
+
+        <p>You might be wondering why the object showed up in <em>
+        Static Shapes</em> instead of <em>Shapes</em>. Objects
+        under Static Shapes are lightweight objects. Additionally,
+        you can do some scripting to create objects with animations
+        and other characteristics. They will show up under Shapes.
+        You'll learn more about this in the <em>On The Job
+        Training</em> chapter. For now, let us move on to the
+        Mission Area Editor.</p>
+      </div>
+    </div>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tge/official/content/documentation/Artists/Missions/Creator.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:22:12 GMT -->
+</html>
+

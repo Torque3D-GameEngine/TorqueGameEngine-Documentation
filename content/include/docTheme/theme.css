@@ -1,0 +1,17 @@
+/* Yellow */ 
+
+html.toc
+{
+   background-color: #FFFDF6;
+}
+
+pre.code, #highLightHUD, .imageright, a.methodTag, a.info:hover span
+{
+	border-color: #FFF7B6;
+}
+
+.tocLabel 
+{
+	color: #000000;
+}
+

@@ -1,0 +1,541 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" dir="ltr" lang="en">
+<!-- Mirrored from docs.garagegames.com/tge/official/content/documentation/Scripters/Reference/Example Datablocks/WheeledVehicleData.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:22:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../../index.html";</SCRIPT><link href="../../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 1692;
+   parent.leftFrame.expandToItem('tree2', 'doc1692');
+   var element = parent.leftFrame.document.getElementById('doc1692');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="KEYWORDS" content="TorqueScript/Datablocks/WheeledVehicleData">
+<meta name="robots" content="index,follow">
+<title>TorqueScript/Datablocks/WheeledVehicleData - TDN</title>
+
+
+
+
+
+
+
+
+</head><BODY id = "BODYID" onLoad = "initComponent()" >
+
+
+
+
+
+<div id="main"><div id="main-content">
+
+
+          <h1 class="firstHeading"><a name = "HeaderLink0"></a>TorqueScript/Datablocks/WheeledVehicleData</h1>
+                              <div id="bodyContent">
+            <h3 id="siteSub"><a name = "HeaderLink1"></a>From TDN</h3>
+            <div id="contentSub"></div>
+                                    <!-- start content -->
+                        <a name="WheeledVehicleData"></a><h2><a name = "HeaderLink2"></a>WheeledVehicleData</h2><br><br>
+<p>WheeledVehicleData also derives from VehicleData and aids the
+creation of vehicles with wheels and tires. WheeledVehicleData defines
+fewer new fields than it's flying and hovering counterparts; these few
+new fields are listed in the table below. <br><br>
+</p><p>Much additional data for wheeled vehicles is defined in the
+WheeledVehicleTire and WheeledVehicleSpring datablocks, which are
+detailed later in this reference.<br><br>
+</p>
+<table summary="WheeledVehicleData Member Fields" border="0" width="100%">
+
+        <tbody><tr>
+          <th align="left" bgcolor="#e4e4e4">Field Name</th>
+          <th align="left" bgcolor="#e4e4e4">Type</th>
+          <th align="left" bgcolor="#e4e4e4">Default Value</th>
+          <th align="left" bgcolor="#e4e4e4">Description</th>
+        </tr>
+        <tr bgcolor="#e4e4e4">
+          <td colspan="4" align="center" bgcolor="#f4f4f4"><b>Special Effects Data</b></td>
+  </tr>
+        <tr>
+          <td align="left">jetSound</td>
+          <td align="left">AudioProfilePtr</td>
+          <td align="left">NULL</td>
+          <td align="left">Points
+to the AudioProfile used to produce sounds for the jet. If specified,
+must point to an object of type AudioProfile. Must adhere to the
+semantics associated with AudioProfile*, as defined in the Torque Game
+Engine. </td>
+        </tr>
+        <tr>
+          <td align="left">engineSound</td>
+          <td align="left">AudioProfilePtr</td>
+          <td align="left">NULL</td>
+          <td align="left">Points
+to the AudioProfile used to produce sounds for the engine. If
+specified, must point to an object of type AudioProfile. Must adhere to
+the semantics associated with AudioProfile*, as defined in the Torque
+Game Engine. </td>
+        </tr>
+        <tr>
+          <td align="left">squealSound</td>
+          <td align="left">AudioProfilePtr</td>
+          <td align="left">NULL</td>
+          <td align="left">Points
+to the AudioProfile used to produce tire squeeling sound. If specified,
+must point to an object of type AudioProfile. Must adhere to the
+semantics associated with AudioProfile*, as defined in the Torque Game
+Engine. </td>
+        </tr>
+        <tr>
+          <td align="left">WheelImpactSound</td>
+          <td align="left">AudioProfilePtr</td>
+          <td align="left">NULL</td>
+          <td align="left"><em>Note: this field currently has no tangible effect in the engine's simulation.</em></td>
+        </tr>
+        <tr>
+          <td align="left">tireEmitter</td>
+          <td align="left">ParticleEmitterDataPtr</td>
+          <td align="left">0</td>
+          <td align="left">Points to the ParticleEmitterDatablock used for each wheel's ParticleEmitter object (each wheel has it's own ParticleEmitter). </td>
+        </tr>
+</tbody></table>
+<p><br><br>
+</p>
+<table summary="WheeledVehicleData Member Fields" border="0" width="100%">
+  <tbody><tr bgcolor="#f4f4f4">
+    <td colspan="4" align="center"><b>Physics Data</b></td>
+  </tr>
+  <tr>
+    <td align="left">maxWheelSpeed</td>
+    <td align="left">Float</td>
+    <td align="left">40.0</td>
+    <td align="left">Determines the maximum speed at which the vehicle may travel.  Also affects the lifetime of particles emitted by the wheel. </td>
+  </tr>
+  <tr>
+    <td align="left">engineTorque</td>
+    <td align="left">Float</td>
+    <td align="left">1.0</td>
+    <td align="left">Scalar applied to the vehicle's throttle value in the determination of total engine torque and wheel angular velocity. </td>
+  </tr>
+  <tr>
+    <td align="left">engineBrake</td>
+    <td align="left">Float</td>
+    <td align="left">1.0</td>
+    <td align="left">Used
+to determine the dampening velocity affecting a wheel's angular
+velocity when the vehicle is engine-braking (not actively braking, but
+no thrust is being applied). </td>
+  </tr>
+  <tr>
+    <td align="left">brakeTorque</td>
+    <td align="left">Float</td>
+    <td align="left">1.0</td>
+    <td align="left">Used to determine the dampening velocity affecting a wheel's angular velocity when the vehicle is actively braking. </td>
+  </tr>
+</tbody></table>
+<a name="WheeledVehicleTire_and_WheeledVehicleSpring"></a><h2><a name = "HeaderLink3"></a>WheeledVehicleTire and WheeledVehicleSpring</h2>
+<p>We continue our study of datablocks which derive directly from
+SimDataBlock by examining the final vehicle-related datablocks in the
+Torque Game Engine, WheeledVehicleTire and WheeledVehicleSpring. Even
+though these datablocks are used in Torque's vehicle system, the
+datablocks themselves are simple enough that they do not need to be
+derived from ShapeBaseData, or even GameBaseData. <br><br>
+</p><p>We first study the WheeledVehicleTire datablock. As its name
+implies, this datablock is intended to encapsulate data corresponding
+to vehicle tires. In the physics of wheeled vehicles, tires play an
+important role and Torque seeks to model their role in vehicle behavior
+as well as is possible in real-time. The table below offers a detailed
+description of each field in the WheeledVehicleTire datablock
+definition. <br>
+</p>
+<table summary="WheeledVehicleTire Member Fields" border="0" width="100%">
+
+  <tbody><tr bgcolor="#e4e4e4">
+    <th align="left">Field Name</th>
+    <th align="left">Type</th>
+    <th align="left">Default Value</th>
+    <th align="left">Description</th>
+  </tr>
+    <tr>
+      <td align="left">shapeFile</td>
+      <td align="left">Filename</td>
+      <td align="left">&nbsp;</td>
+      <td align="left">The
+path and file name of a shape file to be used for the wheel. Must
+adhere to the semantics associated with the Filename datatype, as
+defined in the engine. </td>
+    </tr>
+    <tr>
+      <td align="left">radius</td>
+      <td align="left">Float</td>
+      <td align="left">0.6</td>
+      <td align="left">The
+tire's radius. The radius is determined from the boundix box of the
+shape provided in the shapefile field, and does not need to be
+specified in script. The tire should be built with it's hub axis along
+the object's Y-axis. </td>
+    </tr>
+    <tr>
+      <td align="left">mass</td>
+      <td align="left">Float</td>
+      <td align="left">&nbsp;</td>
+      <td align="left">The
+mass of the entire wheel. Used in the physics simulation, see the
+documentation for the WheeledVehicleData datablock for more
+information. The wheel's mass does not need to be specified in script. </td>
+    </tr>
+    <tr>
+      <td align="left">staticFriction</td>
+      <td align="left">Float</td>
+      <td align="left">1.0</td>
+      <td align="left">Used in the physical simulation to represent the tire's surface friction when it is not slipping (has traction). </td>
+    </tr>
+    <tr>
+      <td align="left">kineticFriction</td>
+      <td align="left">Float</td>
+      <td align="left">0.5</td>
+      <td align="left">Used in the physical simulation to represent the tire's surface friction when it is slipping (has no traction). </td>
+    </tr>
+    <tr>
+      <td align="left">lateralForce</td>
+      <td align="left">Float</td>
+      <td align="left">10.0</td>
+      <td align="left">Used
+in the physical simulation to represent the tire's lateral force.
+Lateral force can in simple terms be considered left/right steering
+force. WheeledVehicles are acted upon by forces generated by their
+tires and the lateralForce measures the magnitude of the force exerted
+on the vehicle when the tires are deformed along the x-axis. With real
+wheeled vehicles, tires are constantly being deformed and it is the
+interplay of deformation forces which determines how a vehicle moves.
+In Torque's simulation of vehicle physics, tire deformation obviously
+can't be handled with absolute realism, but the interplay of a
+vehicle's velocity, its engine's torque and braking forces, and its
+wheels' friction, lateral deformation, lateralDamping,
+lateralRelaxation, longitudinal deformation, longitudinalDamping, and
+longitudinalRelaxation forces, along with its wheels' angular velocity
+are combined to create a robust real-time physical simulation. For this
+field, the larger the value supplied for the lateralForce, the larger
+the effect steering moves can have. In Torque tire forces are applied
+at a vehicle's wheel hubs. </td>
+    </tr>
+    <tr>
+      <td align="left">lateralDamping</td>
+      <td align="left">Float</td>
+      <td align="left">1.0</td>
+      <td align="left">Measures
+the dampening force applied against lateral forces generated by the
+tire. See the lateralForce field documentation for more information on
+vehicle physics as they relate to wheel forces. </td>
+    </tr>
+    <tr>
+      <td align="left">lateralRelaxation</td>
+      <td align="left">Float</td>
+      <td align="left">1.0</td>
+      <td align="left">Measures
+the relaxing force applied against lateral forces generated by the
+tire. The lateralRelaxation force measures how strongly the tire
+effectively un-deforms. See the lateralForce field documentation for
+more information on vehicle physics as they relate to wheel forces. </td>
+    </tr>
+    <tr>
+      <td align="left">longitudinalForce</td>
+      <td align="left">Float</td>
+      <td align="left">10.0</td>
+      <td align="left">Used
+in the physical simulation to represent the tire's longitudinal force.
+Longitudinal force can in simple terms be considered forward/backward
+movement force. WheeledVehicles are acted upon by forces generated by
+their tires and the longitudinalForce measures the magnitude of the
+force exerted on the vehicle when the tires are deformed along the
+y-axis. See the lateralForce field documentation for more information
+on wheeled vehicle physics. For this field, the larger the value
+supplied for the longitudinalForce, the larger the effect
+acceleration/deceleration moves can have. </td>
+    </tr>
+    <tr>
+      <td align="left">longitudinalDamping</td>
+      <td align="left">Float</td>
+      <td align="left">1.0</td>
+      <td align="left">Measures
+the dampening force applied against longitudinal forces generated by
+the tire. See the longitudinalForce field documentation for more
+information on longitudinal tire forces, and the laterForce field
+documentation for more information on general vehicle physics as they
+relate to wheel forces. </td>
+    </tr>
+    <tr>
+      <td align="left">lateralRelaxation</td>
+      <td align="left">Float</td>
+      <td align="left">1.0</td>
+      <td align="left">Measures
+the relaxing force applied against longitudinal forces generated by the
+tire. The longitudinalRelaxation force measures how strongly the tire
+effectively un-deforms. See the longitudinalForce field documentation
+for more information on longitudinal tire forces, and the laterForce
+field documentation for more information on general vehicle physics as
+they relate to wheel forces. </td>
+    </tr>
+    <tr>
+      <td align="left">restitution</td>
+      <td align="left">Float</td>
+      <td align="left">1.0</td>
+      <td align="left"><em>Note: this field currently has no tangible effect in the engine's simulation.</em></td>
+    </tr>
+</tbody></table><br>
+<p>Since we now have a reference for the WheeledVehicleTire datablock,
+the final vehicle-related datablock to study is the
+WheeledVehicleSpring. WheeledVehicleSprings simulate the effect of a
+vehicle's suspension system. <br><br>
+</p>
+<table summary="WheeledVehicleSpring Member Fields" border="0" width="100%">
+  <tbody><tr bgcolor="#e4e4e4">
+<th align="left">Field Name</th>
+<th align="left">Type</th>
+<th align="left">Default Value</th>
+<th align="left">Description</th>
+  </tr>
+<tr><td align="left">force</td><td align="left">Float</td><td align="left">10.0</td><td align="left">The
+force of the spring. Spring forces act straight up and are applied at
+the spring's root position, which is defined in the vehicle's shape. </td></tr><tr><td align="left">length</td><td align="left">Float</td><td align="left">1.0</td><td align="left">The length of suspension travel from the root position. 
+                        </td></tr><tr><td align="left">Damping</td><td align="left">Float</td><td align="left">1.0</td><td align="left">Dampening force which counter-acts the spring's force.
+                        </td></tr><tr><td align="left">antiSwayForce</td><td align="left">Float</td><td align="left">1.0</td><td align="left">Force which acts to dampen lateral sway introduced when wheels opposite eachother are extended at different lengths.
+</td></tr></tbody></table>
+<p>The physics of wheeled vehicles, their tires, and suspension systems
+can be difficult to understand. You shouldn't feel daunted if the
+nuanced manner in which all the fields we just examined interact with
+eachother doesn't immediately make perfect sense. The field
+descriptions offered in the above tables, and in the WheeledVehicleData
+datablock documentation, describe at a relatively high-level how
+wheeled vehicle physics are simulated in Torque and what the wheeled
+vehicle-related datablock fields are used for. But you should not
+expect to be a master of Torque's complex wheeled vehicle physics
+system after simply reading this datablock reference material.<br><br>
+</p>
+<a name="Full_Example_Script"></a><h2><a name = "HeaderLink4"></a>Full Example Script</h2>
+<p>Taken from the Buggy from Torque\SDK\example\starter.racing\server\scripts\car.cs<br><br>
+</p><p>This does contain audio and particle information to support the whole car.
+</p>
+<pre>//-----------------------------------------------------------------------------
+// Torque Game Engine 
+// Copyright (C) GarageGames.com, Inc.
+//-----------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------
+
+// Information extacted from the shape.
+//
+// Wheel Sequences
+//    spring#        Wheel spring motion: time 0 = wheel fully extended,
+//                   the hub must be displaced, but not directly animated
+//                   as it will be rotated in code.
+// Other Sequences
+//    steering       Wheel steering: time 0 = full right, 0.5 = center
+//    breakLight     Break light, time 0 = off, 1 = breaking
+//
+// Wheel Nodes
+//    hub#           Wheel hub, the hub must be in it's upper position
+//                   from which the springs are mounted.
+//
+// The steering and animation sequences are optional.
+// The center of the shape acts as the center of mass for the car.
+//-----------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------
+// Car Vehicle Shape File
+//---------------------------------------------------------------------------------------
+// Vehicle Name: Car
+// Version: 1.0
+//---------------------------------------------------------------------------------------
+datablock AudioProfile(buggyEngineSound)
+{
+   filename    = "~/data/sound/vehicles/buggy/engine_idle.wav";
+   description = AudioClosestLooping3d;
+   preload = true;
+};
+
+
+datablock ParticleEmitterData(TireEmitter)
+{
+   ejectionPeriodMS = 10;
+   periodVarianceMS = 0;
+   ejectionVelocity = 1;
+   velocityVariance = 1.0;
+   ejectionOffset   = 0.0;
+   thetaMin         = 5;
+   thetaMax         = 20;
+   phiReferenceVel  = 0;
+   phiVariance      = 360;
+   overrideAdvance = false;
+   particles = "TireParticle";
+};
+
+datablock ParticleData(TireParticle)
+{
+   textureName          = "~/data/shapes/buggy/dustParticle";
+   dragCoefficient      = 2.0;
+   gravityCoefficient   = -0.1;
+   inheritedVelFactor   = 0.1;
+   constantAcceleration = 0.0;
+   lifetimeMS           = 1000;
+   lifetimeVarianceMS   = 0;
+   colors[0]     = "0.46 0.36 0.26 1.0";
+   colors[1]     = "0.46 0.46 0.36 0.0";
+   sizes[0]      = 0.50;
+   sizes[1]      = 1.0;
+};
+
+
+//----------------------------------------------------------------------------
+
+datablock WheeledVehicleTire(DefaultCarTire)
+{
+   // Tires act as springs and generate lateral and longitudinal
+   // forces to move the vehicle. These distortion/spring forces
+   // are what convert wheel angular velocity into forces that
+   // act on the rigid body.
+   shapeFile = "~/data/shapes/buggy/wheel.dts";
+   staticFriction = 4;
+   kineticFriction = 1.25;
+
+   // Spring that generates lateral tire forces
+   lateralForce = 18000;
+   lateralDamping = 4000;
+   lateralRelaxation = 1;
+
+   // Spring that generates longitudinal tire forces
+   longitudinalForce = 18000;
+   longitudinalDamping = 4000;
+   longitudinalRelaxation = 1;
+};
+
+datablock WheeledVehicleSpring(DefaultCarSpring)
+{
+   // Wheel suspension properties
+   length = 0.85;             // Suspension travel
+   force = 3000;              // Spring force
+   damping = 600;             // Spring damping
+   antiSwayForce = 3;         // Lateral anti-sway force
+};
+
+datablock WheeledVehicleData(DefaultCar)
+{
+   category = "Vehicles";
+   shapeFile = "~/data/shapes/buggy/buggy.dts";
+   emap = true;
+
+   maxDamage = 1.0;
+   destroyedLevel = 0.5;
+
+   maxSteeringAngle = 0.785;  // Maximum steering angle, should match animation
+   tireEmitter = TireEmitter; // All the tires use the same dust emitter
+
+   // 3rd person camera settings
+   cameraRoll = true;         // Roll the camera with the vehicle
+   cameraMaxDist = 6;         // Far distance from vehicle
+   cameraOffset = 1.5;        // Vertical offset from camera mount point
+   cameraLag = 0.1;           // Velocity lag of camera
+   cameraDecay = 0.75;        // Decay per sec. rate of velocity lag
+
+   // Rigid Body
+   mass = 200;
+   massCenter = "0 -0.5 0";    // Center of mass for rigid body
+   massBox = "0 0 0";         // Size of box used for moment of inertia,
+                              // if zero it defaults to object bounding box
+   drag = 0.6;                // Drag coefficient
+   bodyFriction = 0.6;
+   bodyRestitution = 0.4;
+   minImpactSpeed = 5;        // Impacts over this invoke the script callback
+   softImpactSpeed = 5;       // Play SoftImpact Sound
+   hardImpactSpeed = 15;      // Play HardImpact Sound
+   integration = 4;           // Physics integration: TickSec/Rate
+   collisionTol = 0.1;        // Collision distance tolerance
+   contactTol = 0.1;          // Contact velocity tolerance
+
+   // Engine
+   engineTorque = 4000;       // Engine power
+   engineBrake = 600;         // Braking when throttle is 0
+   brakeTorque = 8000;        // When brakes are applied
+   maxWheelSpeed = 30;        // Engine scale by current speed / max speed
+
+   // Energy
+   maxEnergy = 100;
+   jetForce = 3000;
+   minJetEnergy = 30;
+   jetEnergyDrain = 2;
+
+   // Sounds
+//   jetSound = ScoutThrustSound;
+//   engineSound = BuggyEngineSound;
+//   squealSound = ScoutSquealSound;
+//   softImpactSound = SoftImpactSound;
+//   hardImpactSound = HardImpactSound;
+//   wheelImpactSound = WheelImpactSound;
+
+//   explosion = VehicleExplosion;
+};
+
+
+//-----------------------------------------------------------------------------
+
+function WheeledVehicleData::create(%block)
+{
+   %obj = new WheeledVehicle() {
+      dataBlock = %block;
+   };
+   return(%obj);
+}
+
+//-----------------------------------------------------------------------------
+
+function WheeledVehicleData::onAdd(%this,%obj)
+{
+   // Setup the car with some defaults tires &amp; springs
+   for (%i = %obj.getWheelCount() - 1; %i &gt;= 0; %i--) {
+      %obj.setWheelTire(%i,DefaultCarTire);
+      %obj.setWheelSpring(%i,DefaultCarSpring);
+      %obj.setWheelPowered(%i,false);
+   }
+   
+   // Steer front tires
+   %obj.setWheelSteering(0,1);
+   %obj.setWheelSteering(1,1);
+
+   // Only power the two rear wheels...
+   %obj.setWheelPowered(2,true);
+   %obj.setWheelPowered(3,true);
+}
+
+function WheeledVehicleData::onCollision(%this,%obj,%col,%vec,%speed)
+{
+   // Collision with other objects, including items
+}   
+</pre>
+
+<!-- Saved in parser cache with key tdnmw:pcache:idhash:1665-0!1!0!0!!en!2 and timestamp 20070419024952 -->
+
+
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+<!-- Mirrored from docs.garagegames.com/tge/official/content/documentation/Scripters/Reference/Example Datablocks/WheeledVehicleData.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:22:50 GMT -->
+</html>

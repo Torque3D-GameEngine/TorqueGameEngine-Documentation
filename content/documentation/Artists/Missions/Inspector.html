@@ -1,0 +1,508 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+  
+<!-- Mirrored from docs.garagegames.com/tge/official/content/documentation/Artists/Missions/Inspector.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:22:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 7;
+   parent.leftFrame.expandToItem('tree2', 'doc7');
+   var element = parent.leftFrame.document.getElementById('doc7');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+	<link rel="stylesheet" type="text/css"  href="images/gemdoc.css" title="gemdoc_auto_stylesheet">
+
+    <title>World Editor (Inspector)</title>
+    <meta name="GENERATOR" content=
+    "Modular DocBook HTML Stylesheet Version 1.7">
+    <link rel="HOME" title="Mission Editor Introduction" href=
+    "index.html">
+    <link rel="PREVIOUS" title="World Editor (Manipulator)" href=
+    "missioneditor.manipulator.html">
+    <link rel="NEXT" title="World Editor Creator (Creator)" href=
+    "missioneditor.creator.html">
+  
+
+<meta name="Generator" content="GemDoc"/>
+
+</head>
+
+  <BODY id = "BODYID" onLoad = "initComponent()"  class="section" bgcolor="#FFFFFF" text="#000000" link=
+  "#0000FF" vlink="#840084" alink="#0000FF">
+
+    <div class="section">
+      <h8 class="titleText"><a name="missioneditor.inspector"></a><a name = ""></a>      World Editor (Inspector)</h1>
+
+      <p>Starting The Inspector</p>
+
+      <div class="procedure">
+        <ol type="1">
+          <li>Start the Mission Editor by pressing F11.</li>
+
+          <li>Start the Manipulator by pressing F3.</li>
+        </ol>
+      </div>
+
+      <div class="section">
+        <h2 class="section"><a name="missioneditor.inspector.exam"></a><a name = "HeaderLink1"></a>        Examining The Inspector</h2>
+
+        <p>The Inspector tool allows you to select an object and
+        manipulate all of its script-exposed parameters via text
+        boxes, spinners, radio-buttons, checkboxes, etc. These
+        parameters will vary based on the object. Later in this
+        guide, we will examine specific parameters for water,
+        terrain, the character, the sky, etc. Now, for the purpose
+        of learning about this tool, we will work with a simpler
+        object, namely the SpawnSphere. The purpose of this object
+        is unimportant at this time. The key thing is that it is
+        easily located and manipulated.</p>
+
+        <p>To begin, look directly overhead. You should see a gray
+        object. Select it and you should have a view similar to
+        this:</p>
+
+        <div class="mediaobject">
+          <p><img src="images/worldinspector.png"></p>
+        </div>
+
+        <p>Taking a quick inventory of the screen elements, we see
+        the World Editor Menu at the top, the 3D World-View window
+        which takes up nearly two-thirds of the screen, the World
+        Editor Tree window in the upper right, and finally the
+        World Editor Inspector window in the lower right.</p>
+      </div>
+
+      <div class="section">
+        <h2 class="section"><a name="missioneditor.inspector.tree"></a><a name = "HeaderLink2"></a>        World Editor Tree</h2>
+
+        <p>Before we jump into the relatively straightforward World
+        Editor Inspector let's discuss the World Editor Tree and
+        some important organization features it provides.</p>
+
+        <p>First, expand the list in the World Editor Tree Window.
+        The initial list is completely collapsed which doesn't do
+        us a lot of good when we're trying to manipulate
+        objects.</p>
+
+        <div class="table">
+          <a name="AEN812"></a> 
+
+          <p><b>Table 1-19.</b></p>
+
+          <table border="0" width="100%" class="CALSTABLE">
+            <tbody>
+              <tr>
+                <td width="50%" align="LEFT" valign="MIDDLE">
+                  <div class="procedure">
+                    <ol type="1">
+                      <li>Expand the MissionGroup SimGroup by
+                      clicking the [+] next to the text ####:
+                      Mission Group - SimGroup. Numbers may vary
+                      from illustration.</li>
+
+                      <li>Expand the PlayerDropPoints
+                      SimGroup.</li>
+
+                      <li>Select the SpawnSphere.</li>
+                    </ol>
+                  </div>
+                </td>
+
+                <td width="50%" align="LEFT" valign="MIDDLE">
+                  <div class="mediaobject">
+                    <p><img src=
+                    "images/worldinspectortree.jpg"></p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section"><a name=
+        "missioneditor.inspector.simgroups"></a><a name = "HeaderLink3"></a>SimGroups</h2>
+
+        <p>At this point, you may be asking, <em>what is a
+        SimGroup</em>? Subsequent chapters in the Tech School
+        section will get into the nitty gritty details about
+        SimGroups, SimSets, and SimObjects. For now we'll simply
+        describe SimGroups as a means by which the engine organizes
+        objects. This is both useful from a organization sense,
+        i.e. knowing where to find things while you are editing,
+        and equally useful, for scripting purposes. By pre-defining
+        a consistent set of SimGroups and by organizing your
+        objects within them, your current job as a mission/level
+        designer will be greatly simplified. Your script writers
+        will thank you too. If that is your job to, then pat
+        yourself on the back. Good Job!</p>
+
+        <p>As can be seen from the current view of the World Editor
+        Tree SimGroups can be nested within SimGroups as well as
+        can particular entities (SimObjects). In fact, every
+        mission entity is present in this list and will be found
+        nested within a SimGroup.</p>
+
+        <p>So, how exactly do we place objects within a SimGroup?
+        Let's find out. First, make a duplicate copy of the
+        SpawnSphere. We already have it selected, so all you need
+        to do is type: CTRL + C (to copy) followed by CTRL + V (to
+        paste). Alternately, you can use the Edit Menu ? Copy/Paste
+        operations.</p>
+
+        <p>Now that you've created a new SpawnSphere, you need to
+        locate it in the World Editor Tree.</p>
+
+        <div class="mediaobject">
+          <p><img src="images/spawnsphere.png"></p>
+        </div>
+
+        <p>Hmm? If you've followed the instructions above, you will
+        find the new SpawnSphere at the bottom of the tree. Hmmm,
+        now we would much rather have it in the PlayerDropPoints -
+        SimGroup with the rest of the SpawnSpheres. So, let's
+        manually move this one to the correct spot and then learn
+        how to place objects in the right SimGroup the first
+        time.</p>
+
+        <div class="section">
+          <h3 class="section"><a name=
+          "missioneditor.inspector.simgroups.moving"></a><a name = "HeaderLink4"></a>Moving           Existing Objects Into A SimGroup (Add-Group or Instant           Group)</h3>
+
+          <p>The new SpawnSphere should already be selected, but if
+          it isn't, please click on it to select it. Now, use the
+          slider on the right side of the World Editor Tree Window
+          and find the PlayerDropsPoints-SimGroup. Select this as
+          the Add-Group through the key/mouse combination: ALT +
+          RightClick. The Add-Group should now be selected with a
+          gray background:</p>
+
+          <div class="mediaobject">
+            <p><img src="images/simgroup.jpg"></p>
+          </div>
+
+          <p>Now, select the menu item: World -&gt; Add Selection
+          to Instant Group. Viola! The SpawnSphere is in the
+          PlayerDropPoints - SimGroup.</p>
+
+          <div class="mediaobject">
+            <p><img src="images/simgroup1.jpg"></p>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section"><a name=
+          "missioneditor.inspector.simgroups.creating"></a><a name = "HeaderLink5"></a>Creating           Objects in a Pre-existing SimGroup(Add-Group)</h3>
+
+          <p>OK, so that was a hassle. How do we get objects to
+          place in the correct SimGroup when we create them?
+          Simple. You already have a SpawnSphere in your
+          copy-buffer and you already have the Add-Group selected
+          (see above). Paste another Spawn sphere and it should
+          show up in the PlayerDropPoints - SimGroup. Easy as pie!
+          The trick to select your instant group before pasting
+          objects and they will automatically be placed in that
+          SimGroup.</p>
+
+          <div class="mediaobject">
+            <p><img src="images/simgroup2.jpg"></p>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section"><a name=
+          "missioneditor.inspector.simgroups.keys"></a><a name = "HeaderLink6"></a>World Editor           Key Stroke/Mousing List</h3>
+
+          <p>Here is a summary of operations you make do on
+          SimGroups and Objects with the mouse and key
+          combinations.</p>
+
+          <div class="table">
+            <a name="AEN862"></a> 
+
+            <p><b>Table 1-20.</b></p>
+
+            <table border="0" width="100%" class="CALSTABLE">
+              <tbody>
+                <tr>
+                  <td width="33%" align="LEFT" valign="MIDDLE">
+                    <p>ALT +</p>
+
+                    <p><img src=
+                    "images/rightmouseclick.png"></p>
+                    <br>
+                     <br>
+                     
+                  </td>
+
+                  <td width="33%" align="LEFT" valign="MIDDLE">
+                    <p>ON SIMGROUP</p>
+                  </td>
+
+                  <td width="33%" align="LEFT" valign="MIDDLE">
+                    <p>Set current Add-Group</p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="33%" align="LEFT" valign="MIDDLE">
+                    <p>CTRL +</p>
+
+                    <p><img src=
+                    "images/rightmouseclick.png"></p>
+                    <br>
+                     <br>
+                     
+                  </td>
+
+                  <td width="33%" align="LEFT" valign="MIDDLE">
+                    <p>ON SIMGROUP</p>
+                  </td>
+
+                  <td width="33%" align="LEFT" valign="MIDDLE">
+                    <p>(Un)select all members in simgroup.</p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="33%" align="LEFT" valign="MIDDLE">
+                    <p>CTRL +</p>
+
+                    <p><img src=
+                    "images/rightmouseclick.png"></p>
+                    <br>
+                     <br>
+                     
+                  </td>
+
+                  <td width="33%" align="LEFT" valign="MIDDLE">
+                    <p>ON OBJECT</p>
+                  </td>
+
+                  <td width="33%" align="LEFT" valign="MIDDLE">
+                    <p>(Un)select object(s).</p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="33%" align="LEFT" valign="MIDDLE">
+                    <p>SHIFT +</p>
+
+                    <p><img src=
+                    "images/rightmouseclick.png"></p>
+                    <br>
+                     <br>
+                     
+                  </td>
+
+                  <td width="33%" align="LEFT" valign="MIDDLE">
+                    <p>ON OBJECT</p>
+                  </td>
+
+                  <td width="33%" align="LEFT" valign="MIDDLE">
+                    <p>Select multiple objects.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section"><a name=
+          "missioneditor.inspector.simgroups.inspector"></a><a name = "HeaderLink7"></a>World           Editor Inspector Window</h3>
+
+          <p>OK, now let's address the World Editor Inspector. This
+          is of course, the window from which this tool gets its
+          name. The purpose of this window is to allow you to <em>
+          inspect</em> and modify parameters for individual
+          objects. If you play around a bit and click on different
+          objects, you will begin to see that different object
+          types have different parameters. For now, we'll address
+          the more common values, adding new values, and finish off
+          with some tips on using the interface effectively. We
+          will leave a detailed inspection of individual objects'
+          parameters for the <em>Specific Mission Objects</em>
+          chapter in Tech School.</p>
+
+          <div class="section">
+            <h4 class="section"><a name=
+            "missioneditor.inspector.simgroups.inspector.commonfields"></a><a name = "HeaderLink8"></a>            Inspector - Common Fields</h4>
+
+            <p>By far, the most common fields are:</p>
+
+            <ul>
+              <li>
+                <p>Position (X,Y,Z) - Three floating point values
+                representing the coordinates of the selected object
+                in world space.</p>
+              </li>
+
+              <li>
+                <p>Rotation (Xm,Ym,Zm,A) - Four floating point
+                values where the first three are multipliers and
+                the fourth value is the angle (in degrees) of the
+                rotation(s).</p>
+
+                <ul>
+                  <li>
+                    <p>Example: rotation 0 1 0 90.0 means the
+                    object is rotated 90 degrees about the y-axis,
+                    relative to the world-axis.</p>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <p>Scale (Xm,Ym,Zm) - Three floating point values
+                representing a relative scaling. The values act as
+                multipliers of the object's default dimension(s) in
+                the indicated axes.</p>
+
+                <ul>
+                  <li>
+                    <p>Example: scale 1 1 2 means that this object
+                    will be twice as tall as the default when
+                    loaded into the world.</p>
+                  </li>
+
+                  <li>
+                    <p>Note: These values correspond indirectly to
+                    those you see when mouse-scaling. Mouse scaling
+                    values are actual world dimension.</p>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <p>shapeName (shapes only) - This parameter's name
+                is a misnomer. It actually gives the relative path
+                and filename of the selected shape.</p>
+              </li>
+
+              <li>
+                <p>interiorFile (interiors only) - This parameter
+                gives the relative path and filename of the
+                selected interior.</p>
+              </li>
+
+              <li>
+                <p>Object Name - There isn't actually a parameter
+                tag for <em>Object Name</em>, but there is an
+                editable text-field for it. The text-field is
+                located to the right of the Apply button (see image
+                below). You can type just about anything (no spaces
+                allowed, so my text in the illustration is bad.) in
+                this field and click apply to name your object.
+                Note: Objects can be given the same name. We'll
+                leave further discussion of object naming for a
+                later chapter. Just remember, this is how you
+                change it from the inspector.</p>
+              </li>
+            </ul>
+
+            <div class="mediaobject">
+              <p><img src="images/namefield.jpg"></p>
+            </div>
+
+            <p>Object Name Field</p>
+          </div>
+
+          <div class="section">
+            <h4 class="section"><a name=
+            "missioneditor.inspector.simgroups.inspector.dynamicfields"></a><a name = "HeaderLink9"></a>            Inspector - Dynamic Fields</h4>
+
+            <p>I won't explain what dynamic fields are yet, but
+            rather explain a way they can be added. I will however
+            say that dynamic fields are an important feature
+            related to scripting and that you are very likely to
+            use them. That said,</p>
+
+            <ul>
+              <li>
+                <p>To Add a Dynamic Field</p>
+
+                <ul>
+                  <li>
+                    <p>Select the object which you wish to add a
+                    field to.</p>
+                  </li>
+
+                  <li>
+                    <p>Click the ADD button found in the Dynamic
+                    Fields section of the world editor inspector
+                    window.</p>
+                  </li>
+
+                  <li>
+                    <p>In the dialog pops up (below), give the
+                    field a meaningful and unique name and an
+                    initial value.</p>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+
+            <div class="mediaobject">
+              <p><img src="images/adddynamicfield.png"></p>
+            </div>
+
+            <ul>
+              <li>
+                <p>To modify the value of a Dynamic Field</p>
+
+                <ul>
+                  <li>
+                    <p>Same as changing the value of any other
+                    field. Just modify the contents of the
+                    text-field next to the Dynamic Field name and
+                    click APPLY.</p>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <p>To delete the Dynamic Field</p>
+
+                <ul>
+                  <li>
+                    <p>Click on the check-box next to the Dynamic
+                    field (see picture below) and the field will be
+                    removed permanently. This <em>cannot be
+                    undone</em>.</p>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+
+            <div class="mediaobject">
+              <p><img src="images/dynamicfield.png"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tge/official/content/documentation/Artists/Missions/Inspector.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:22:07 GMT -->
+</html>
+

@@ -1,0 +1,66 @@
+<html>
+<!-- Mirrored from docs.garagegames.com/tge/official/content/documentation/Artists/Missions/Area.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:22:13 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 5;
+   parent.leftFrame.expandToItem('tree2', 'doc5');
+   var element = parent.leftFrame.document.getElementById('doc5');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script><meta http-equiv="Content-Type" content="text/html; charset=ANSI_X3.4-1968"><title>Mission Area Editor (Area Editor)</title><link rel="stylesheet" href="style.html" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.62.4"><link rel="home" href="index-2.html" title="Torque Documentation"><link rel="up" href="Intro.html" title="Chapter&#160;4.&#160;Mission Editor Introduction"><link rel="previous" href="ch04s05.html" title="World Editor Creator (Creator)"><link rel="next" href="ch04s07.html" title="Terrain Editor"></head><BODY id = "BODYID" onLoad = "initComponent()"  bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+					<div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="missioneditor.area"></a><a name = "HeaderLink0"></a>Mission Area Editor (Area Editor)</h2></div></div><div></div></div><p>
+			Starting The Area Editor
+		</p><div class="procedure"><ol type="1"><li>
+				Start the Mission Editor by pressing F11.
+			</li><li>
+				Start the Area Editor by pressing F5.
+			</li></ol></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="missioneditor.area.window"></a><a name = "HeaderLink1"></a>The Mission Area Editor Window</h3></div></div><div></div></div><p>
+				In the upper right corner of the screen, you will see a blue and white image.  This image represents the mission map.  The Area Editor provides the ability to select the size and location of  the mission bounds (or area).  Strangely, it also provides a terrain editing feature.  It should be noted that manipulating the mission area seems to have some side-effects.  In particular, when you re-center the mission area, it tends to move the existing interiors and shapes in the mission.  The problem is that this movement seems to be inconsistent.  So, my advice is, if you are going to adjust your mission area, do it before you place a significant number of objects in your mission, or you may be very upset at the outcome.  Now, lets take a look at the parts of the editor and explain how it works.
+			</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="missioneditor.area.editing"></a><a name = "HeaderLink2"></a>Editing the Mission Area</h3></div></div><div></div></div><p>
+				The Mission Area Editor is very simple to use.   Simple click the <span class="emphasis"><em>Edit Area</em></span> checkbox and handles will appear on the mission area box.  Now drag and resize to your heart's content.  You will be able to see the effect of your changes in the 3D World View Window also.  One thing to keep in mind is that the image is inverted.  That is, the top of the image is what most would consider <span class="emphasis"><em>South</em></span>, the bottom <span class="emphasis"><em>North</em></span>, and the left and right respectively <span class="emphasis"><em>West</em></span> and <span class="emphasis"><em>East</em></span>.  This could quickly become cumbersome to remember, so the creators of the Area Editor provided a device to give you a better hint as to where you are looking when you edit.  The device I'm speaking of is the Field Of View (FOV) <span class="emphasis"><em>V</em></span>.  Look at the labeled example below:
+			</p><div class="screenshot"><div class="mediaobject"><img src="images/10_Fov.html"></div>
+			</div><p>
+				Before moving on there are a couple of things that you should know:
+			</p><div class="procedure"><ol type="1"><li>
+					You can use the area editor window to rapidly relocate your character/camera.  Simply be sure that the Edit Area button is NOT checked and click in the window.  Your character/camera (depending on view mode) will <span class="emphasis"><em>jump</em></span> to that point.
+				</li><li><p>
+						The Area Editor has (what I consider) a small bug.  If you have made modifications to your terrain using the Terraformer or the Terrain editor, those changes will not automatically be reflected in the Area Editor image.  To <span class="emphasis"><em>refresh</em></span> the image do this:
+					</p><div class="procedure"><ol type="1"><li>
+							Make your terrain changes.
+						</li><li>
+							Start the Area Editor and make sure <span class="emphasis"><em>Edit Area</em></span> is checked.
+						</li><li>
+							Drag the mission area off center.
+						</li><li>
+							Re-center by clicking the <span class="emphasis"><em>Center</em></span> button.  The updated terrain should now be reflected in the Area Editor image.
+						</li></ol></div><p>
+						The moral of this story is, <span class="emphasis"><em>Edit your terrain topography first, then edit your mission area.  And!!!  Do all this before placing interiors or shapes.</em></span>
+					</p></li></ol></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="missioneditor.area.mirror"></a><a name = "HeaderLink3"></a>Mirroring the Mission Area</h3></div></div><div></div></div><p>
+				As I mentioned above, the Area Editor also provides what I would label a <span class="emphasis"><em>terrain editing feature</em></span>.  Namely, the ability to mirror the terrain.  This is very useful if you wish to create a balanced (in terms of terrain obstacles) mission area.  To use this feature, click on the <span class="emphasis"><em>Mirror</em></span> and you will see the image below.
+			</p><div class="screenshot"><div class="mediaobject"><img src="images/mission/missionareamirror.html"></div>
+			</div><p>
+				The premise of this tools is simple:
+			</p><div class="itemizedlist"><ul type="disc"><li><p>
+						Select the orientation of the mirroring plane (with left and right arrow buttons).
+					</p></li><li><p>
+						Click Apply to mirror-copy the Source onto the Destination.
+					</p></li></ul></div></div></div>
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+<!-- Mirrored from docs.garagegames.com/tge/official/content/documentation/Artists/Missions/Area.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:22:16 GMT -->
+</html>
